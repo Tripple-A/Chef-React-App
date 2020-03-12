@@ -1,5 +1,4 @@
-const loggedin = (state=false, action) => {
-  console.log('login reducer')
+const loggedIn = (state=false, action) => {
     switch(action.type){
        case 'LOG IN':
        return true
@@ -10,4 +9,4 @@ const loggedin = (state=false, action) => {
     }
 }
 
-export default loggedin;
+export default loggedIn;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect} from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { LOGIN, ASSIGNUSER} from '../actions';
@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => ({
     loginUser: () => dispatch(LOGIN)
 })
 
- class Home extends Component{
+ class SignUp extends Component{
     state={
         email:'',
         password:'',
@@ -78,10 +78,11 @@ const mapDispatchToProps = dispatch => ({
              </input><br></br>
             </form>
                 <button className='btn btn-primary' onClick={this.handleSubmit}>SIGN UP</button>
+            <h6><Link to='/'>Already a user? Sign In</Link></h6>
             </div>
 
         )
     }
 }
 
-export default connect(mapStatetoProps,mapDispatchToProps)(Home)
+export default connect(mapStatetoProps,mapDispatchToProps)(SignUp)
