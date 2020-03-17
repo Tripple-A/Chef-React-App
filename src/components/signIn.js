@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => ({
     
     async componentDidMount(){
       await axios.get('http://localhost:3002/logged_in',{withCredentials: true})
-      .then(res => { console.log(res)
+      .then(res => { 
         if (res.data.logged_in) {
             this.props.loginUser()
             this.props.assignUser(res.data.user)
@@ -65,7 +65,7 @@ const mapDispatchToProps = dispatch => ({
         const show = this.props.logged_in? (<Redirect to='/dashboard'/>) : <div> {this.state.errors} </div>
         return(
             <div>
-                <h3>Welcome to GetHired App</h3>
+                <h3>Welcome to the Foodie App</h3>
                 {show}
             <form className="form-group">
              <input
