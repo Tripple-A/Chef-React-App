@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ImageUploader from 'react-images-upload';
 import axios from 'axios';
 //import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -24,7 +25,8 @@ const mapStateToProps = state => ({
 
 class Dashboard extends Component{
   state = {
-    chefs: []
+    chefs: [],
+    image:[]
   }
   async componentDidMount(){
     await axios.get('http://localhost:3002/chefs')
@@ -35,6 +37,19 @@ class Dashboard extends Component{
       }
     }
     )
+  }
+
+  fileSelect=picture=>{
+    this.setState({image: picture[0]}) 
+    
+    
+  }
+  uploadPic = () => {
+    console.log(this.state.image)
+    const fd = new FormData()
+    fd.append('image' , this.state.image )
+    axios.post('http://localhost:3002/add', fd)
+    .then(res => console.log(res))
   }
   
  render(){
@@ -52,6 +67,7 @@ class Dashboard extends Component{
   const chefs = this.state.chefs.map(chef => <div key={chef.id} className="content col-md-12 row">
     <div className="col-md-5">
     <img className="pics" src={pics(chef.specialty)} alt="website logo" />
+    
     </div>
     <div className="col-md-7 desc">
     <div><span> Company Name: </span> {chef.company_name}</div>
@@ -61,7 +77,18 @@ class Dashboard extends Component{
   </div>)
     return(
         <div className="dashboard">
+          <div style={{display: 'flex'}}>
+            
           <h4> Hi {user.email}</h4>
+          <ImageUploader
+                        withIcon={true}
+                        buttonText='Choose images'
+                        onChange={event => this.fileSelect(event)}
+                        imgExtension={['.jpg', '.gif', '.png', '.gif', '.jpeg']}
+                    />
+          <button onClick={this.uploadPic}>upload</button>
+          </div>
+         
           <h5> Find vendors by their specialty, location or both.</h5> 
           <form className="form-group">
          <select className="form-control">
@@ -75,6 +102,7 @@ class Dashboard extends Component{
          </select>
          <button className="btn btn-primary">GO</button>
          </form>
+         
           <div className="container row row1 ">
             {chefs}
           </div>
