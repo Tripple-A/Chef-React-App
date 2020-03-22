@@ -22,10 +22,11 @@ const Header = ({logged_in, logoutUser, user}) => {
                       })
       };
     const date = new Date().toDateString();
-    const id = `/vendor/${user.id}`
+    const profile = `/vendor/${user.id}`;
+    const newven = `/newVendor/${user.id}`
     const show = logged_in?  <div> Log Out</div> : (<Redirect to='/'/>) ;
-    const toggle = user.vendor?  <Link to={id}>Vendor Profile </Link> :
-           <Link to='/newVendor'>Become a Vendor</Link> 
+    const toggle = user.vendor?  <Link to={profile}>Vendor Profile </Link> :
+           <Link to={newven}>Become a Vendor</Link> 
     return(
     <div>
         <header>
