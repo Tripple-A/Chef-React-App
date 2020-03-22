@@ -48,8 +48,9 @@ class Dashboard extends Component{
     console.log(this.state.image)
     const fd = new FormData()
     fd.append('image' , this.state.image )
+    fd.append('id' , this.props.user.id)
     axios.post('http://localhost:3002/add', fd)
-    .then(res => console.log(res))
+    .then(res => this.setState({src:res.data.src}))
   }
   
  render(){
@@ -78,7 +79,7 @@ class Dashboard extends Component{
     return(
         <div className="dashboard">
           <div style={{display: 'flex'}}>
-            
+           <img src={this.state.src} alt="profile pic"/> 
           <h4> Hi {user.email}</h4>
           <ImageUploader
                         withIcon={true}

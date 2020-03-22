@@ -7,6 +7,7 @@ import SignIn from './components/signIn';
 import Dashboard from './components/dashboard';
 import Header from './components/header';
 import NewVendor from './components/newVendor'
+import VendorProfile from './components/vendorProfile'
 class App extends Component{
   render(){
     return(
@@ -16,6 +17,7 @@ class App extends Component{
         <Route  path='/' exact component={SignIn}></Route>
         <Route  path='/signup' exact component={SignUp}></Route>
         <Route  path='/newvendor' exact component={NewVendor}></Route>
+        <Route  path='/vendor/:user_id' exact component={VendorProfile}></Route>
         <Route path='/dashboard' exact strict component={Dashboard}></Route>
       </Switch>
       </BrowserRouter>

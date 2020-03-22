@@ -47,6 +47,7 @@ const mapDispatchToProps = dispatch => ({
         {withCredentials: true})
         .then(response => {
             if (response.data.status === 'created'){
+                console.log(response.data.user)
                 this.props.loginUser()
                 this.props.assignUser(response.data.user)
             }
