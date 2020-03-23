@@ -1,61 +1,69 @@
-import React, { Component } from 'react';
-import { Redirect, Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import axios from 'axios';
-import { LOGIN, ASSIGNUSER} from '../actions';
-
+import React, { Component } from "react";
+import { Redirect, Link } from "react-router-dom";
+import { connect } from "react-redux";
+import axios from "axios";
+import { AuthForm } from "../components/auth/AuthForm";
+import { LOGIN, ASSIGNUSER } from "../actions";
 
 const mapStatetoProps = state => ({
-    logged_in:state.loggedIn
-})
+  logged_in: state.loggedIn
+});
 
 const mapDispatchToProps = dispatch => ({
-    assignUser: (user) => dispatch(ASSIGNUSER(user)),
-    loginUser: () => dispatch(LOGIN)
-})
+  assignUser: user => dispatch(ASSIGNUSER(user)),
+  loginUser: () => dispatch(LOGIN)
+});
 
- class SignUp extends Component{
-    state={
-        email:'',
-        password:'',
-        password_confirmation:'',
-    }
+class SignUp extends Component {
+  state = {
+    name: "",
+    email: "",
+    password: "",
+    password_confirmation: ""
+  };
 
-    handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
-    }
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-    handleSubmit = () => {
-        const{email,password,password_confirmation} = this.state
-        axios.post('http://localhost:3002/registrations',
-        {
-           email,
-           password,
-           password_confirmation
-        }, 
-        {withCredentials: true})
-        .then(response => {
-            console.log(response)
-            if (response.data.status === 'created'){
-                console.log('creaaateed')
-                this.props.loginUser()
-                this.props.assignUser(response.data.user)
-            }
-            else {
-                console.log(response.data.status)
-            }
-        })
-        }
-        ;
-        
+  handleSubmit = e => {
+    e.preventDefault();
+    const { name, email, password, password_confirmation } = this.state;
 
-    render(){
-        const show = this.props.logged_in? (<Redirect to='/dashboard'/>) : <div> Find Skilled Workers Around You, You can be one too</div>
-        return(
-            <div>
-                {show}
-            <form className="form-group">
-             <input
+    // axios
+    //   .post(
+    //     "http://localhost:3002/registrations",
+    //     {
+    //       email,
+    //       password,
+    //       password_confirmation
+    //     },
+    //     { withCredentials: true }
+    //   )
+    //   .then(response => {
+    //     console.log(response);
+    //     if (response.data.status === "created") {
+    //       console.log("creaaateed");
+    //       this.props.loginUser();
+    //       this.props.assignUser(response.data.user);
+    //     } else {
+    //       console.log(response.data.status);
+    //     }
+    //   });
+  };
+
+  render() {
+    const show = this.props.logged_in ? (
+      <Redirect to="/dashboard" />
+    ) : (
+      <div> Find Skilled Workers Around You, You can be one too</div>
+    );
+    const { name, email, password, password_confirmation } = this.state;
+    return (
+      <div>
+        {show}
+        {/* <form className="form-group"> */}
+        {/* <input
               type='text'
               name='email' 
               placeholder='Username' 
@@ -78,11 +86,19 @@ const mapDispatchToProps = dispatch => ({
              </input><br></br>
             </form>
                 <button className='btn btn-primary' onClick={this.handleSubmit}>SIGN UP</button>
-            <h6><Link to='/'>Already a user? Sign In</Link></h6>
-            </div>
-
-        )
-    }
+            <h6><Link to='/'>Already a user? Sign In</Link></h6> */}
+        <AuthForm
+          authHeader="Sign up"
+          type="signup"
+          name={name}
+          email={email}
+          password={password}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+      </div>
+    );
+  }
 }
 
-export default connect(mapStatetoProps,mapDispatchToProps)(SignUp)
+export default connect(mapStatetoProps, mapDispatchToProps)(SignUp);

@@ -3,3 +3,9 @@
   margin-left: 10%;
   height: 100%;
 }
+
+.eye {
+  margin-left: -5%;
+  width: 20%;
+  cursor: pointer;
+}

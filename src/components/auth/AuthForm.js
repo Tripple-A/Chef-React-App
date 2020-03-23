@@ -1,19 +1,17 @@
 import React from "react";
 import "../styles/AuthForm.scss";
-import { AuthImg } from "../svg/svgs";
+import { Link } from "react-router-dom";
+import { AuthImg } from "../../helpers/svgs";
+import { Eye } from "../../helpers/svgs";
 
 export const AuthForm = ({
   type,
   authHeader,
   name,
-  setName,
   handleSubmit,
-  username,
-  setUsername,
+  email,
   password,
-  setPassword,
-  passwordConfirmation,
-  setPasswordConfirmation
+  handleChange
 }) => {
   return (
     <div className="authWrapper">
@@ -37,7 +35,7 @@ export const AuthForm = ({
               <input
                 type="text"
                 name="name"
-                onChange={e => setName(e.target.value)}
+                onChange={handleChange}
                 value={name}
                 placeholder="enter your first name"
               />
@@ -47,14 +45,14 @@ export const AuthForm = ({
           )}
           <div className="authField">
             <div>
-              <label for="email">Username: </label>
+              <label for="email">E-mail: </label>
             </div>
 
             <input
-              type="text"
-              name="username"
-              onChange={e => setUsername(e.target.value)}
-              value={username}
+              type="email"
+              name="email"
+              onChange={handleChange}
+              value={email}
               placeholder="give yourself a username"
             />
           </div>
@@ -62,34 +60,33 @@ export const AuthForm = ({
             <div>
               <label for="name">Password: </label>
             </div>
-            <input
-              type="password"
-              name="password"
-              onChange={e => setPassword(e.target.value)}
-              value={password}
-              placeholder="we won't force a password style on you."
-            />
-          </div>
-          {type === "signup" ? (
-            <div className="authField">
-              <div>
-                <label for="name">Password again: </label>
-              </div>
-
+            <div className="passwordInput">
               <input
                 type="password"
+                id="password"
                 name="password"
-                onChange={e => setPasswordConfirmation(e.target.value)}
-                value={passwordConfirmation}
-                placeholder="enter the same password as above."
+                onChange={handleChange}
+                value={password}
+                placeholder="we won't force a password style on you."
               />
+              <Eye />{" "}
             </div>
-          ) : (
-            ""
-          )}
+          </div>
+
           <button type="submit" className="submitAuth">
             {authHeader}
           </button>
+          <div className="switchAuth">
+            {type === "signup" ? (
+              <div>
+                Already Signed up? <Link to="/">Log in</Link>.{" "}
+              </div>
+            ) : (
+              <div>
+                Don't have an account yet? <Link to="/signup">Sign up</Link>
+              </div>
+            )}
+          </div>
         </form>
       </div>
     </div>
