@@ -1,0 +1,45 @@
+.authImgSvg {
+  width: 80%;
+  margin-left: 10%;
+  height: 40%;
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+
+  @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
+    margin-top: 5em;
+  }
+}
+
+.eye {
+  margin-left: -5%;
+  width: calc(25px - 20%);
+  // cursor: pointer;
+}
+.logoSvg {
+  background-color: #fdffef;
+  margin-left: 3%;
+  @media screen and (max-width: 480px) {
+    width: 10px;
+  }
+}
+
+.blob {
+  z-index: -255;
+  position: absolute;
+  top: 10%;
+  width: 600px;
+  height: 600px;
+  @media screen and (max-width: 480px) {
+    width: 375px;
+    height: 400px;
+    top: 50%;
+    left: 0;
+    right: 10;
+  }
+
+  @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
+    right: 0;
+  }
+}

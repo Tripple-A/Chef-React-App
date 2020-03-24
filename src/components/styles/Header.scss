@@ -1,0 +1,49 @@
+.menuWrapper {
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  @media screen and (max-width: 480px) {
+    grid-template-columns: 100vw;
+  }
+  @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
+    grid-template-columns: 45% 55%;
+  }
+}
+
+.logo {
+  background-color: #fdffef;
+  @media screen and (max-width: 480px) {
+    text-align: center;
+  }
+}
+
+.menuMain {
+  display: flex;
+  justify-content: flex-end;
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+
+  @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
+    width: 100%;
+    margin-left: 0.5em;
+  }
+}
+
+.menu {
+  flex-wrap: nowrap;
+  width: calc(2vw * 20);
+  font-family: Poppins;
+  font-size: 1.1em;
+  margin-right: 10%;
+  color: #60723d;
+  margin-top: 4%;
+  display: flex;
+  justify-content: space-around;
+  @media screen and (max-width: 480px) {
+    visibility: hidden;
+  }
+  @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
+    width: calc(2vw * 40);
+  }
+}

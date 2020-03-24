@@ -3,7 +3,7 @@ import { Redirect, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 import { Logo } from "../helpers/svgs";
-import "./styles/Header.css";
+import "./styles/Header.scss";
 import { LOGOUT } from "../actions";
 
 const mapStateToProps = state => ({

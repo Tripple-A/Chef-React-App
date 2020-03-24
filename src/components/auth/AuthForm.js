@@ -25,7 +25,7 @@ export const AuthForm = ({
         </div>
       </div>
       <div className="authFormWrapper">
-        <h2>{authHeader}</h2>
+        <h1>{authHeader}</h1>
         <form className="authForm" onSubmit={handleSubmit}>
           {type === "signup" ? (
             <div className="authField">
@@ -69,7 +69,7 @@ export const AuthForm = ({
                 name="password"
                 onChange={handleChange}
                 value={password}
-                placeholder="we won't force a password style on you."
+                placeholder="any combination of letters."
               />
               <Eye />{" "}
             </div>
@@ -83,11 +83,15 @@ export const AuthForm = ({
           <div className="switchAuth">
             {type === "signup" ? (
               <div>
-                Already Signed up? <Link to="/">Log in</Link>.{" "}
+                <p>
+                  Already Signed up? <Link to="/">Log in</Link>.{" "}
+                </p>
               </div>
             ) : (
               <div>
-                Don't have an account yet? <Link to="/signup">Sign up</Link>
+                <p>
+                  Don't have an account yet? <Link to="/signup">Sign up</Link>
+                </p>
               </div>
             )}
           </div>
