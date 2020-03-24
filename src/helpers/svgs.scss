@@ -30,7 +30,7 @@
 .logoSvg {
   background-color: #fdffef;
   margin-left: 3%;
-  @media screen and (max-width: 480px) {
+  @media screen and (max-device-width: 480px) {
     width: 10px;
   }
 }
