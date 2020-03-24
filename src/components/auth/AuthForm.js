@@ -72,10 +72,12 @@ export const AuthForm = ({
               <Eye />{" "}
             </div>
           </div>
+          <div className="submit">
+            <button type="submit" className="submitAuth">
+              {authHeader}
+            </button>
+          </div>
 
-          <button type="submit" className="submitAuth">
-            {authHeader}
-          </button>
           <div className="switchAuth">
             {type === "signup" ? (
               <div>

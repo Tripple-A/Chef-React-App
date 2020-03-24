@@ -53,11 +53,7 @@ class SignUp extends Component {
   };
 
   render() {
-    const show = this.props.logged_in ? (
-      <Redirect to="/dashboard" />
-    ) : (
-      <div> Find Skilled Workers Around You, You can be one too</div>
-    );
+    const show = this.props.logged_in ? <Redirect to="/dashboard" /> : "";
     const { name, email, password, password_confirmation } = this.state;
     return (
       <div>

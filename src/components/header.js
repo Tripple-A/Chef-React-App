@@ -1,35 +1,40 @@
-import React from 'react';
-import { Redirect, Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import axios from 'axios';
-import { LOGOUT } from '../actions';
+import React from "react";
+import { Redirect, Link } from "react-router-dom";
+import { connect } from "react-redux";
+import axios from "axios";
+import { Logo } from "../helpers/svgs";
+import "./styles/Header.css";
+import { LOGOUT } from "../actions";
 
 const mapStateToProps = state => ({
-    logged_in: state.loggedIn,
-    user: state.user
-  })
-  
-  const mapDispatchToProps = dispatch => ({
-    logoutUser: () => dispatch(LOGOUT)
-  })
+  logged_in: state.loggedIn,
+  user: state.user
+});
 
-const Header = ({logged_in, logoutUser, user}) => {
+const mapDispatchToProps = dispatch => ({
+  logoutUser: () => dispatch(LOGOUT)
+});
 
-  const  retire = () => {
-        axios.delete('http://localhost:3002/logout',{withCredentials: true})
-                      .then(response => { 
-                        if(response.data.logged_out)logoutUser();
-                      })
-      };
-    const date = new Date().toDateString();
-    const profile = `/vendor/${user.id}`;
-    const newven = `/newVendor/${user.id}`
-    const show = logged_in?  <div> Log Out</div> : (<Redirect to='/'/>) ;
-    const toggle = user.vendor?  <Link to={profile}>Vendor Profile </Link> :
-           <Link to={newven}>Become a Vendor</Link> 
-    return(
-    <div>
-        <header>
+const Header = ({ logged_in, logoutUser, user }) => {
+  const retire = () => {
+    axios
+      .delete("http://localhost:3002/logout", { withCredentials: true })
+      .then(response => {
+        if (response.data.logged_out) logoutUser();
+      });
+  };
+  const date = new Date().toDateString();
+  const profile = `/vendor/${user.id}`;
+  const newven = `/newVendor/${user.id}`;
+  const show = logged_in ? <div> Log Out</div> : <Redirect to="/" />;
+  const toggle = user.vendor ? (
+    <Link to={profile}>Vendor Profile </Link>
+  ) : (
+    <Link to={newven}>Become a Vendor</Link>
+  );
+  return (
+    <div className="menuWrapper">
+      {/* <header>
             FOODIE
             <div className="container-fluid" >
             <nav >
@@ -43,10 +48,19 @@ const Header = ({logged_in, logoutUser, user}) => {
             </div>
             
            
-          </header>
-        
+          </header> */}
+      <div className="logo">
+        <Logo />
+      </div>
+      <div className="menuMain">
+        <div className="menu">
+          <div>see vendors</div>
+          <div> become a vendor </div>
+          <div>order food</div>
+        </div>
+      </div>
     </div>
-)
-    }
+  );
+};
 
-export default connect(mapStateToProps,mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   font-family: Poppins;
+  height: 90vh;
 }
 
 .authImg {
@@ -10,8 +11,7 @@
 
 .hot {
   text-align: center;
-  margin-top: 4%;
-
+  margin-top: 8%;
   h3 {
     font-weight: 600;
     margin-bottom: 0;
@@ -22,7 +22,7 @@
   }
   p:last-child {
     margin-top: 3%;
-    font-size: small;
+    font-size: medium;
   }
 }
 
@@ -39,6 +39,11 @@
     padding: 0.2em;
   }
 
+  input:focus {
+    border-bottom: 3px solid #969f60;
+    transition: 0.1s border-bottom ease;
+  }
+
   label {
     font-size: 1.2em;
     font-weight: 600;
@@ -51,15 +56,19 @@
   margin-left: 10%;
 }
 
+.submit {
+  width: 40vw;
+}
 .submitAuth {
   border: 0;
   background-color: #969f60;
-  padding: 2% 35%;
+  padding: 2% 30%;
   margin-top: 10%;
   color: white;
   font-weight: 600;
   font-size: 1.7em;
   border-radius: 15px;
+  box-shadow: 2px 1px 2px grey;
 }
 
 .passwordInput {
@@ -70,4 +79,8 @@
   text-align: center;
   margin-top: 5%;
   font-size: 1.2em;
+}
+
+.submit {
+  text-align: center;
 }
