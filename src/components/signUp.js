@@ -28,28 +28,30 @@ class SignUp extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { name, email, password, password_confirmation } = this.state;
+    const { name, email, password} = this.state;
+    //const { password_confirmation } = this.state.password;
+     axios
+       .post(
+         "http://localhost:3002/registrations",
+         {
+           name,
+           email,
+           password,
+           password_confirmation: password
 
-    // axios
-    //   .post(
-    //     "http://localhost:3002/registrations",
-    //     {
-    //       email,
-    //       password,
-    //       password_confirmation
-    //     },
-    //     { withCredentials: true }
-    //   )
-    //   .then(response => {
-    //     console.log(response);
-    //     if (response.data.status === "created") {
-    //       console.log("creaaateed");
-    //       this.props.loginUser();
-    //       this.props.assignUser(response.data.user);
-    //     } else {
-    //       console.log(response.data.status);
-    //     }
-    //   });
+         },
+         { withCredentials: true }
+       )
+       .then(response => {
+         console.log(response);
+         if (response.data.status === "created") {
+           console.log("creaaateed");
+           this.props.loginUser();
+           this.props.assignUser(response.data.user);
+         } else {
+           console.log(response.data.status);
+         }
+       });
   };
 
   render() {

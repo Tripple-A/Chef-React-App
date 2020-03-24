@@ -80,7 +80,7 @@ class Dashboard extends Component{
         <div className="dashboard">
           <div style={{display: 'flex'}}>
            <img src={this.state.src} alt="profile pic"/> 
-          <h4> Hi {user.email}</h4>
+          <h4> Hi {user.name}</h4>
           <ImageUploader
                         withIcon={true}
                         buttonText='Choose images'

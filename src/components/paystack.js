@@ -39,7 +39,7 @@ class Paystack extends Component {
     }
 
   render() {
-    const show = this.state.vendor?  (<Redirect to='/'/>) : <h3>There was a problem with your payment</h3>;
+    const show = this.state.vendor?  (<Redirect to='/'/>) : <h3>This page will redirect you to your profile after succesful payment</h3>;
     return (
         <div>
             

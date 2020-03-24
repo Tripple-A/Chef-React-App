@@ -41,27 +41,27 @@ class SignIn extends Component {
     const { email, password } = this.state;
     console.log(email, password);
 
-    // axios
-    //   .post(
-    //     "http://localhost:3002/sessions",
-    //     {
-    //       email,
-    //       password
-    //     },
-    //     { withCredentials: true }
-    //   )
-    //   .then(response => {
-    //     if (response.data.status === "created") {
-    //       console.log(response.data.user);
-    //       this.props.loginUser();
-    //       this.props.assignUser(response.data.user);
-    //     } else {
-    //       console.log(response.data.error);
-    //       if (response.data.error !== "")
-    //         this.setState({ errors: response.data.error });
-    //       else this.setState({ errors: "Email or Password incorrect" });
-    //     }
-    //   });
+     axios
+       .post(
+         "http://localhost:3002/sessions",
+         {
+           email,
+           password
+         },
+         { withCredentials: true }
+       )
+       .then(response => {
+         if (response.data.status === "created") {
+           console.log(response.data.user);
+           this.props.loginUser();
+           this.props.assignUser(response.data.user);
+         } else {
+           console.log(response.data.error);
+           if (response.data.error !== "")
+             this.setState({ errors: response.data.error });
+           else this.setState({ errors: "Email or Password incorrect" });
+         }
+       });
   };
 
   render() {
@@ -93,6 +93,7 @@ class SignIn extends Component {
             </form>
                 <button type='submit' className='btn btn-primary' onClick={this.handleSubmit}>SIGN IN</button>
               <h6><Link to='/signup'>Not a Member? Sign Up</Link></h6> */}
+        <div>{show}</div>
         <AuthForm
           authHeader="Log in"
           handleSubmit={this.handleSubmit}
@@ -100,6 +101,7 @@ class SignIn extends Component {
           handleChange={this.handleChange}
           password={password}
         />
+        
       </div>
     );
   }

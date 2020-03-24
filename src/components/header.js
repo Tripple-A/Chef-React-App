@@ -54,9 +54,14 @@ const Header = ({ logged_in, logoutUser, user }) => {
       </div>
       <div className="menuMain">
         <div className="menu">
-          <div>see vendors</div>
-          <div> become a vendor </div>
-          <div>order food</div>
+          <nav >
+            <ul className="nav">
+            <li className="date"> {date}</li>
+              <li>{toggle}</li>
+              <li>Saved Vendors</li>
+                <li  onClick={() => retire()}> {show} </li>
+                </ul>      
+            </nav>
         </div>
       </div>
     </div>
