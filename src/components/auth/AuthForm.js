@@ -54,7 +54,7 @@ export const AuthForm = ({
               name="email"
               onChange={handleChange}
               value={email}
-              placeholder="give yourself a username"
+              placeholder="example@example.com"
             />
             <Blob />
           </div>
