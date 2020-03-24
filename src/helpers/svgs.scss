@@ -10,6 +10,16 @@
   @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
     margin-top: 5em;
   }
+
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    margin-top: 5em;
+  }
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    margin-top: 10%;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    margin-top: 20%;
+  }
 }
 
 .eye {
@@ -42,7 +52,13 @@
   @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
     right: 0;
   }
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    right: 0;
+  }
   @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    right: 0;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
     right: 0;
   }
 }
