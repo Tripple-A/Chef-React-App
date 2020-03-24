@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/AuthForm.scss";
 import { Link } from "react-router-dom";
 import { AuthImg } from "../../helpers/svgs";
+import { Blob } from "../../helpers/svgs";
 import { Eye } from "../../helpers/svgs";
 
 export const AuthForm = ({
@@ -55,6 +56,7 @@ export const AuthForm = ({
               value={email}
               placeholder="give yourself a username"
             />
+            <Blob />
           </div>
           <div className="authField">
             <div>

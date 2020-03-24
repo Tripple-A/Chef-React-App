@@ -14,3 +14,9 @@
   background-color: #fdffef;
   margin-left: 3%;
 }
+
+.blob {
+  z-index: -255;
+  position: absolute;
+  top: 10%;
+}
