@@ -51,6 +51,7 @@ class SignIn extends Component {
          { withCredentials: true }
        )
        .then(response => {
+         console.log(response)
          if (response.data.status === "created") {
            console.log(response.data.user);
            this.props.loginUser();
