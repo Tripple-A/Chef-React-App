@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 import { AuthForm } from "../components/auth/AuthForm";
@@ -28,30 +28,29 @@ class SignUp extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { name, email, password} = this.state;
-     axios
-       .post(
-         "https://foodie-apiv1.herokuapp.com/registrations",
-         {
-           name,
-           email,
-           password,
-           password_confirmation: password
-
-         },
-         { withCredentials: true }
-       )
-       .then(response => {
-         console.log(response);
-         if (response.data.status === "created") {
-           console.log("creaaateed");
-           this.props.loginUser();
-           this.props.assignUser(response.data.user);
-         } else {
-           console.log(response.data.status);
-         }
-       })
-       .catch(e => console.log(e.response));
+    const { name, email, password } = this.state;
+    axios
+      .post(
+        "https://foodie-apiv1.herokuapp.com/registrations",
+        {
+          name,
+          email,
+          password,
+          password_confirmation: password
+        },
+        { withCredentials: true }
+      )
+      .then(response => {
+        console.log(response);
+        if (response.data.status === "created") {
+          console.log("creaaateed");
+          this.props.loginUser();
+          this.props.assignUser(response.data.user);
+        } else {
+          console.log(response.data.status);
+        }
+      })
+      .catch(e => console.log(e.response));
   };
 
   render() {

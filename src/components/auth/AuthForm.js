@@ -12,10 +12,12 @@ export const AuthForm = ({
   handleSubmit,
   email,
   password,
-  handleChange
+  handleChange,
+  errors
 }) => {
   return (
     <div className="authWrapper">
+      {/* {errors.length > 1 ? <div>error </div> : ""} */}
       <div className="authImg">
         <AuthImg />
         <div className="hot">

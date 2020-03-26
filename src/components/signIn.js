@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { apiUrl } from "../helpers/helperFns";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 import { LOGIN, ASSIGNUSER } from "../actions";
@@ -32,7 +32,8 @@ class SignIn extends Component {
           this.props.loginUser();
           this.props.assignUser(res.data.user);
         }
-      });
+      })
+      .catch();
   }
 
   handleChange = e => {
@@ -53,7 +54,7 @@ class SignIn extends Component {
         { withCredentials: true }
       )
       .then(response => {
-        console.log(response);
+        console.log(response.data);
         if (response.data.status === "created") {
           console.log(response.data.user);
           this.props.loginUser();
@@ -64,15 +65,12 @@ class SignIn extends Component {
             this.setState({ errors: response.data.error });
           else this.setState({ errors: "Email or Password incorrect" });
         }
-      });
+      })
+      .catch(error => this.setState({ errors: error.response }));
   };
 
   render() {
-    const show = this.props.logged_in ? (
-      <Redirect to="/dashboard" />
-    ) : (
-      <div> {this.state.errors} </div>
-    );
+    const show = this.props.logged_in ? <Redirect to="/dashboard" /> : "";
     const { email, password } = this.state;
     return (
       <div>
@@ -83,6 +81,7 @@ class SignIn extends Component {
           email={email}
           handleChange={this.handleChange}
           password={password}
+          errors={this.state.errors}
         />
       </div>
     );

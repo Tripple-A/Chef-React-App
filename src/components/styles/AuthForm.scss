@@ -14,10 +14,7 @@
 
 .authImg {
   background-color: #fdffef;
-
-  @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
-    height: 70vh;
-  }
+  padding-bottom: 2em;
 }
 
 .hot {
@@ -52,18 +49,23 @@
 .authFormWrapper {
   h1 {
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 10%;
     font-size: 3em;
   }
+
+  margin: 0 auto;
 
   input {
     border: 0;
     border-bottom: 1px solid black;
-    width: 80%;
+    width: 70%;
     padding: 0.2em;
     background-color: transparent;
     @media screen and (max-width: 480px) {
       width: 95%;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      width: 90%;
     }
   }
 
@@ -80,6 +82,9 @@
     @media screen and (max-width: 480px) {
       margin-top: 1em;
     }
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin: 15% auto;
   }
 }
 
@@ -116,10 +121,9 @@
   text-align: center;
   margin-top: 5%;
   font-size: 110%;
-  margin: 0.5em 3em;
+  margin: 0.5em 1em;
   text-align: center;
-}
-
-.submit {
-  text-align: center;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin: 0.5em 2em;
+  }
 }
