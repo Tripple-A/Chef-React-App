@@ -31,7 +31,7 @@ class SignUp extends Component {
     const { name, email, password} = this.state;
      axios
        .post(
-         "http://localhost:3002/registrations",
+         "https://foodie-apiv1.herokuapp.com/registrations",
          {
            name,
            email,
@@ -50,7 +50,8 @@ class SignUp extends Component {
          } else {
            console.log(response.data.status);
          }
-       });
+       })
+       .catch(e => console.log(e.response));
   };
 
   render() {
