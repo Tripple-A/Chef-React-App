@@ -22,7 +22,7 @@ export default class ProfileForm extends Component {
     createProfile = (e) => {
         e.preventDefault()
         const {company_name, location, specialty, pitch} = this.state;
-        axios.post('http://localhost:3002/profiles',
+        axios.post('https://foodie-apiv1.herokuapp.com/profiles',
         {
           company_name,
           location,

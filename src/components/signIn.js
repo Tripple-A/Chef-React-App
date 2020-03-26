@@ -23,7 +23,7 @@ class SignIn extends Component {
 
   async componentDidMount() {
     await axios
-      .get("http://localhost:3002/logged_in", { withCredentials: true })
+      .get("https://foodie-apiv1.herokuapp.com/logged_in", { withCredentials: true })
       .then(res => {
         if (res.data.logged_in) {
           this.props.loginUser();
@@ -43,7 +43,7 @@ class SignIn extends Component {
 
      axios
        .post(
-         "http://localhost:3002/sessions",
+         "https://foodie-apiv1.herokuapp.com/sessions",
          {
            email,
            password
