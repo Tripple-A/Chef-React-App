@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import ImageUploader from "react-images-upload";
 import axios from "axios";
 import { apiUrl } from "../helpers/helperFns";
-//import { Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
 import Continental from "../images/meals/continental.jpg";
 import Continental2 from "../images/meals/continental2.jpg";
@@ -27,7 +26,7 @@ class Dashboard extends Component {
     image: []
   };
   async componentDidMount() {
-    await axios.get("http://localhost:3002/chefs").then(res => {
+    await axios.get(`${apiUrl}/chefs`).then(res => {
       if (res.data.status === 200) {
         this.setState({ chefs: res.data.chefs });
         console.log("yes!!");
@@ -44,7 +43,7 @@ class Dashboard extends Component {
     fd.append("image", this.state.image);
     fd.append("id", this.props.user.id);
     axios
-      .post("http://localhost:3002/add", fd)
+      .post("${apiUrl}/add", fd)
       .then(res => this.setState({ src: res.data.src }));
   };
 
