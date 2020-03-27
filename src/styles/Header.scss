@@ -31,23 +31,19 @@
   }
 }
 
-.date {
-  margin-right: 2em;
-  color: black;
-}
 .menu {
   width: calc(2vw * 20);
-  font-family: Poppins;
-  font-size: 1.1em;
-  margin-right: 10%;
-  color: #60723d;
-  margin-top: 4%;
-  display: flex;
-  justify-content: flex-end;
-  @media screen and (max-width: 480px) {
-    visibility: hidden;
-  }
-  @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
-    width: calc(2vw * 40);
-  }
+  //   font-family: Poppins;
+  //   font-size: 1.1em;
+  //   margin-right: 10%;
+  // color: #60723d;
+  //   margin-top: 4%;
+  //   display: flex;
+  //   justify-content: flex-end;
+  //   @media screen and (max-width: 480px) {
+  //     visibility: hidden;
+  //   }
+  //   @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
+  //     width: calc(2vw * 40);
+  //   }
 }

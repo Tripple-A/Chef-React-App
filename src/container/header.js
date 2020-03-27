@@ -25,32 +25,49 @@ const Header = ({ logged_in, logoutUser, user }) => {
   const date = new Date().toDateString();
   const profile = `/vendor/${user.id}`;
   const newven = `/newVendor/${user.id}`;
-  const show = logged_in ? (
-    <button onClick={() => retire()}> Log Out</button>
+  const showLogout = logged_in ? (
+    <button onClick={() => retire()}>
+      {" "}
+      <span className="text-dark-skin">log out</span>
+    </button>
   ) : (
     <Redirect to="/" />
   );
-  let toggle = "";
+  let becomeVendorToggler = "";
 
   if (logged_in && user.vendor) {
-    toggle = <Link to={profile}>Vendor Profile </Link>;
+    becomeVendorToggler = <Link to={profile}>Vendor Profile </Link>;
   } else if (logged_in && !user.vendor) {
-    toggle = <Link to={newven}>Become a Vendor</Link>;
+    becomeVendorToggler = (
+      <button>
+        <Link to={newven} className="text-dark-skin">
+          become a vendor
+        </Link>
+      </button>
+    );
   } else if (!logged_in) {
-    toggle = "";
+    becomeVendorToggler = "";
   }
 
   return (
-    <div className="menuWrapper">
+    <div className="menuWrapper ">
       <div className="logo">
         <Logo />
       </div>
-      <div className="menuMain">
-        <nav className="menu">
-          <div className="date">{date}</div>
-          <div>see vendors</div>
-          <div>{toggle}</div>
-          <div> {show} </div>
+      <div className={`menuMain ${logged_in ? "bg-light-skin" : ""} `}>
+        <nav
+          className={`menu ${
+            logged_in ? "md:invisible lg:visible" : ""
+          } mt-4 flex justify-around text-center`}
+        >
+          <div className={`${!logged_in ? "visible" : "invisible"}`}>
+            {date}
+          </div>
+          <div className={`${!logged_in ? "ml-4  mr-20" : ""}`}>
+            <Link className="text-dark-skin">see vendors</Link>
+          </div>
+          <div>{becomeVendorToggler}</div>
+          <div> {showLogout} </div>
         </nav>
       </div>
     </div>

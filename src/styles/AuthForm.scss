@@ -49,8 +49,9 @@
 .authFormWrapper {
   h1 {
     margin-left: 10%;
-    margin-top: 10%;
+    margin-top: 5%;
     font-size: 3em;
+    margin-bottom: 0.5em;
   }
 
   .authError {
@@ -81,8 +82,8 @@
   label {
     font-size: 1.2em;
     font-weight: 600;
-    margin-top: 3em;
-    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+    margin-bottom: 0em;
     @media screen and (max-width: 480px) {
       margin-top: 1em;
     }
@@ -107,13 +108,15 @@
 }
 .submitAuth {
   border: 0;
+  display: flex;
+  justify-content: center;
   background-color: #969f60;
-  padding: 3% 0;
+  padding: 2% 0;
   width: 90%;
   margin-top: 10%;
   color: white;
   font-weight: 600;
-  font-size: 1.7em;
+  font-size: 1.4em;
   border-radius: 15px;
   box-shadow: 2px 1px 2px grey;
   @media (min-width: 1000px) {

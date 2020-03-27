@@ -1,6 +1,6 @@
 import React from "react";
 import { showPassword, hidePassword } from "../helpers/helperFns";
-import "./svgs.scss";
+import "../styles/svgs.scss";
 
 export const AuthImg = () => {
   return (

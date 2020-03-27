@@ -86,10 +86,10 @@ class Dashboard extends Component {
       </div>
     ));
     return (
-      <div className="dashboard">
-        <div style={{ display: "flex" }}>
+      <div className="bg-light-skin min-h-screen">
+        {/* <div style={{ display: "flex" }}>
           <img src={this.state.src} alt="profile pic" />
-          <h4> Hi {user.name}</h4>
+          <h4 className="text-blue-300"> Hi {user.name}</h4>
           <ImageUploader
             withIcon={true}
             buttonText="Choose images"
@@ -99,7 +99,10 @@ class Dashboard extends Component {
           <button onClick={this.uploadPic}>upload</button>
         </div>
 
-        <h5> Find vendors by their specialty, location or both.</h5>
+        <h5 class="text-red-400">
+          {" "}
+          Find vendors by their specialty, location or both.
+        </h5>
         <form className="form-group">
           <select className="form-control">
             <option>All Locations</option>
@@ -113,7 +116,23 @@ class Dashboard extends Component {
           <button className="btn btn-primary">GO</button>
         </form>
 
-        <div className="container row row1 ">{chefs}</div>
+        <div className="container row row1 ">{chefs}</div> */}
+        <div className="md:flex md:justify-between md:ml-20 md:mr-6">
+          <div className="sm:mt-0 md:mt-4 text-dark-skin">
+            <h2 className="sm:text-2xl md:text-5xl ">Dashboard</h2>
+            <p className="sm:ml-4 md:ml-2 font-medium">
+              What would you like to do today?
+            </p>
+          </div>
+          <div className="mt-4 text-dark-skin">
+            <div className="bg-dark-skin w-6/12 md:w-full ml-4 md:text-right p-2 md:p-4 md:text-xl font-semibold text-white rounded-md ">
+              Welcome, {user.name}
+            </div>
+            <p className="font-medium text-left md:text-right mt-2">
+              Wallet balance: N2,000
+            </p>
+          </div>
+        </div>
       </div>
     );
   }
