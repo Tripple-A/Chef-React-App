@@ -3,7 +3,7 @@ import { Redirect, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import services from "../services/services";
 import { Logo } from "../helpers/svgs";
-import "../components/styles/Header.scss";
+import "../styles/Header.scss";
 import { LOGOUT } from "../actions";
 
 const mapStateToProps = state => ({

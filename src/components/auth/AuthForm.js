@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/AuthForm.scss";
+import "../../styles/AuthForm.scss";
 import { Link } from "react-router-dom";
 import { AuthImg } from "../../helpers/svgs";
 import { Blob } from "../../helpers/svgs";
