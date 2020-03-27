@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { apiUrl } from "../helpers/helperFns";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import axios from "axios";
 import { LOGIN, ASSIGNUSER } from "../actions";
 import { AuthForm } from "./auth/AuthForm";
+import services from "../services/services";
 
 const mapStatetoProps = state => ({
   logged_in: state.loggedIn
@@ -24,10 +23,8 @@ class SignIn extends Component {
   };
 
   async componentDidMount() {
-    await axios
-      .get(`${apiUrl}/logged_in`, {
-        withCredentials: true
-      })
+    services
+      .checkLoggedIn()
       .then(res => {
         if (res.data.logged_in) {
           this.props.loginUser();
@@ -47,16 +44,9 @@ class SignIn extends Component {
     e.preventDefault();
 
     const { email, password } = this.state;
-
-    axios
-      .post(
-        `${apiUrl}/sessions`,
-        {
-          email,
-          password
-        },
-        { withCredentials: true }
-      )
+    const details = { email, password };
+    services
+      .signin(details)
       .then(response => {
         console.log(response.data);
         if (response.data.status === "created") {
@@ -71,7 +61,7 @@ class SignIn extends Component {
             this.setState({ authenticating: false });
           } else {
             this.setState({
-              errors: "The email or Password you is incorrect."
+              errors: "email or Password is incorrect."
             });
             this.setState({ authenticating: false });
           }

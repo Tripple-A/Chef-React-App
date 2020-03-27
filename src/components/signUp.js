@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import axios from "axios";
-import { apiUrl } from "../helpers/helperFns";
+import services from "../services/services";
 import { AuthForm } from "../components/auth/AuthForm";
 import { LOGIN, ASSIGNUSER } from "../actions";
 
@@ -33,17 +32,9 @@ class SignUp extends Component {
     e.preventDefault();
     this.setState({ authenticating: true });
     const { name, email, password } = this.state;
-    axios
-      .post(
-        `${apiUrl}/registrations`,
-        {
-          name,
-          email,
-          password,
-          password_confirmation: password
-        },
-        { withCredentials: true }
-      )
+    const details = { name, email, password, password_confirmation: password };
+    services
+      .signup(details)
       .then(response => {
         console.log(response);
         if (response.data.status === "created") {
@@ -66,7 +57,7 @@ class SignUp extends Component {
 
   render() {
     const show = this.props.logged_in ? <Redirect to="/dashboard" /> : "";
-    const { name, email, password, errors } = this.state;
+    const { name, email, password, errors, authenticating } = this.state;
     return (
       <div>
         {show}
@@ -79,6 +70,7 @@ class SignUp extends Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
           errors={errors}
+          authenticating={authenticating}
         />
       </div>
     );
