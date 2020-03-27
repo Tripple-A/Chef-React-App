@@ -21,7 +21,8 @@ class SignUp extends Component {
     email: "",
     errors: "",
     password: "",
-    password_confirmation: ""
+    password_confirmation: "",
+    authenticating: false
   };
 
   handleChange = e => {
@@ -30,6 +31,7 @@ class SignUp extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    this.setState({ authenticating: true });
     const { name, email, password } = this.state;
     axios
       .post(
@@ -45,6 +47,7 @@ class SignUp extends Component {
       .then(response => {
         console.log(response);
         if (response.data.status === "created") {
+          this.setState({ authenticating: false });
           console.log("creaaateed");
           this.props.loginUser();
           this.props.assignUser(response.data.user);
@@ -52,11 +55,13 @@ class SignUp extends Component {
           this.setState({
             errors: "The email you have entered is already in use."
           });
+          this.setState({ authenticating: false });
         }
       })
-      .catch(error =>
-        this.setState({ errors: "There was a problem signing you up." })
-      );
+      .catch(error => {
+        this.setState({ errors: "There was a problem signing you up." });
+        this.setState({ authenticating: false });
+      });
   };
 
   render() {

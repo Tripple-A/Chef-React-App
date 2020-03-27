@@ -23,15 +23,21 @@ const Header = ({ logged_in, logoutUser, user }) => {
         if (response.data.logged_out) logoutUser();
       });
   };
+
   const date = new Date().toDateString();
   const profile = `/vendor/${user.id}`;
   const newven = `/newVendor/${user.id}`;
   const show = logged_in ? <div> Log Out</div> : <Redirect to="/" />;
-  const toggle = user.vendor ? (
-    <Link to={profile}>Vendor Profile </Link>
-  ) : (
-    <Link to={newven}>Become a Vendor</Link>
-  );
+  let toggle = "";
+
+  if (logged_in && user.vendor) {
+    toggle = <Link to={profile}>Vendor Profile </Link>;
+  } else if (logged_in && !user.vendor) {
+    toggle = <Link to={newven}>Become a Vendor</Link>;
+  } else if (!logged_in) {
+    toggle = "";
+  }
+
   return (
     <div className="menuWrapper">
       <div className="logo">
@@ -41,6 +47,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
         <nav className="menu">
           <div className="date">{date}</div>
           <div>see vendors</div>
+          <div>{toggle}</div>
           <div onClick={() => retire()}> {show} </div>
         </nav>
       </div>

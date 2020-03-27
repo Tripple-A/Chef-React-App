@@ -108,13 +108,18 @@
 .submitAuth {
   border: 0;
   background-color: #969f60;
-  padding: 2% 30%;
+  padding: 3% 0;
+  width: 90%;
   margin-top: 10%;
   color: white;
   font-weight: 600;
   font-size: 1.7em;
   border-radius: 15px;
   box-shadow: 2px 1px 2px grey;
+  @media (min-width: 1000px) {
+    width: 70%;
+    padding: 2% 0;
+  }
 }
 
 .passwordInput {

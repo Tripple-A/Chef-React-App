@@ -19,7 +19,8 @@ class SignIn extends Component {
   state = {
     email: "",
     password: "",
-    errors: ""
+    errors: "",
+    authenticating: false
   };
 
   async componentDidMount() {
@@ -42,7 +43,9 @@ class SignIn extends Component {
 
   handleSubmit = e => {
     this.setState({ errors: "" });
+    this.setState({ authenticating: true });
     e.preventDefault();
+
     const { email, password } = this.state;
 
     axios
@@ -60,14 +63,18 @@ class SignIn extends Component {
           console.log(response.data.user);
           this.props.loginUser();
           this.props.assignUser(response.data.user);
+          this.setState({ authenticating: false });
         } else {
           console.log(response.data.error);
-          if (response.data.error !== "")
+          if (response.data.error !== "") {
             this.setState({ errors: response.data.error });
-          else
+            this.setState({ authenticating: false });
+          } else {
             this.setState({
               errors: "The email or Password you is incorrect."
             });
+            this.setState({ authenticating: false });
+          }
         }
       })
       .catch(error =>
@@ -77,7 +84,7 @@ class SignIn extends Component {
 
   render() {
     const show = this.props.logged_in ? <Redirect to="/dashboard" /> : "";
-    const { email, password, errors } = this.state;
+    const { email, password, errors, authenticating } = this.state;
     return (
       <div>
         <div>{show}</div>
@@ -88,6 +95,7 @@ class SignIn extends Component {
           handleChange={this.handleChange}
           password={password}
           errors={errors}
+          authenticating={authenticating}
         />
       </div>
     );
