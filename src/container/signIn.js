@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { LOGIN, ASSIGNUSER } from "../actions";
-import { AuthForm } from "./auth/AuthForm";
+import { AuthForm } from "../components/auth/AuthForm";
 import services from "../services/services";
 
 const mapStatetoProps = state => ({
