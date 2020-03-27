@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
+import { apiUrl } from "../helpers/helperFns";
 import { AuthForm } from "../components/auth/AuthForm";
 import { LOGIN, ASSIGNUSER } from "../actions";
 
@@ -18,6 +19,7 @@ class SignUp extends Component {
   state = {
     name: "",
     email: "",
+    errors: "",
     password: "",
     password_confirmation: ""
   };
@@ -31,7 +33,7 @@ class SignUp extends Component {
     const { name, email, password } = this.state;
     axios
       .post(
-        "https://foodie-apiv1.herokuapp.com/registrations",
+        `${apiUrl}/registrations`,
         {
           name,
           email,
@@ -47,43 +49,22 @@ class SignUp extends Component {
           this.props.loginUser();
           this.props.assignUser(response.data.user);
         } else {
-          console.log(response.data.status);
+          this.setState({
+            errors: "The email you have entered is already in use."
+          });
         }
       })
-      .catch(e => console.log(e.response));
+      .catch(error =>
+        this.setState({ errors: "There was a problem signing you up." })
+      );
   };
 
   render() {
     const show = this.props.logged_in ? <Redirect to="/dashboard" /> : "";
-    const { name, email, password } = this.state;
+    const { name, email, password, errors } = this.state;
     return (
       <div>
         {show}
-        {/* <form className="form-group"> */}
-        {/* <input
-              type='text'
-              name='email' 
-              placeholder='Username' 
-              value={this.state.username} 
-              onChange={this.handleChange} required>
-             </input> <br></br>
-             <input 
-             type='password' 
-             name='password' 
-             placeholder='Password' 
-             value={this.state.password} 
-             onChange={this.handleChange} required>
-             </input> <br></br>
-             <input 
-             type='password' 
-             name='password_confirmation' 
-             placeholder='Password Confirmation' 
-             value={this.state.password_confirmation}
-             onChange={this.handleChange}>
-             </input><br></br>
-            </form>
-                <button className='btn btn-primary' onClick={this.handleSubmit}>SIGN UP</button>
-            <h6><Link to='/'>Already a user? Sign In</Link></h6> */}
         <AuthForm
           authHeader="Sign up"
           type="signup"
@@ -92,6 +73,7 @@ class SignUp extends Component {
           password={password}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          errors={errors}
         />
       </div>
     );

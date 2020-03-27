@@ -41,6 +41,7 @@ class SignIn extends Component {
   };
 
   handleSubmit = e => {
+    this.setState({ errors: "" });
     e.preventDefault();
     const { email, password } = this.state;
 
@@ -63,15 +64,20 @@ class SignIn extends Component {
           console.log(response.data.error);
           if (response.data.error !== "")
             this.setState({ errors: response.data.error });
-          else this.setState({ errors: "Email or Password incorrect" });
+          else
+            this.setState({
+              errors: "The email or Password you is incorrect."
+            });
         }
       })
-      .catch(error => this.setState({ errors: error.response }));
+      .catch(error =>
+        this.setState({ errors: "There was an issue signing you up." })
+      );
   };
 
   render() {
     const show = this.props.logged_in ? <Redirect to="/dashboard" /> : "";
-    const { email, password } = this.state;
+    const { email, password, errors } = this.state;
     return (
       <div>
         <div>{show}</div>
@@ -81,7 +87,7 @@ class SignIn extends Component {
           email={email}
           handleChange={this.handleChange}
           password={password}
-          errors={this.state.errors}
+          errors={errors}
         />
       </div>
     );

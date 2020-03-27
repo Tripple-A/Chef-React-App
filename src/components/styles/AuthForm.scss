@@ -53,6 +53,10 @@
     font-size: 3em;
   }
 
+  .authError {
+    margin-left: 10%;
+    color: red;
+  }
   margin: 0 auto;
 
   input {
@@ -118,12 +122,21 @@
 }
 
 .switchAuth {
-  text-align: center;
+  width: 70%;
   margin-top: 5%;
   font-size: 110%;
-  margin: 0.5em 1em;
+  margin: 0.5em 4em;
   text-align: center;
+
   @media (min-width: 768px) and (max-width: 1024px) {
     margin: 0.5em 2em;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin: 0.5em auto;
+  }
+
+  .switch {
+    text-align: center;
   }
 }

@@ -8,4 +8,4 @@ export const hidePassword = () => {
   password.type = "password";
 };
 
-export const apiUrl = "foodie-apiv1.herokuapp.com";
+export const apiUrl = "https://foodie-apiv1.herokuapp.com/";

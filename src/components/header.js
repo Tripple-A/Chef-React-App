@@ -34,35 +34,15 @@ const Header = ({ logged_in, logoutUser, user }) => {
   );
   return (
     <div className="menuWrapper">
-      {/* <header>
-            FOODIE
-            <div className="container-fluid" >
-            <nav >
-            <ul className="nav">
-            <li className="date"> {date}</li>
-              <li>{toggle}</li>
-              <li>Saved Vendors</li>
-                <li  onClick={() => retire()}> {show} </li>
-                </ul>      
-            </nav>
-            </div>
-            
-           
-          </header> */}
       <div className="logo">
         <Logo />
       </div>
       <div className="menuMain">
-        <div className="menu">
-          <nav >
-            <ul className="nav">
-            <li className="date"> {date}</li>
-              <li>{toggle}</li>
-              <li>Saved Vendors</li>
-                <li  onClick={() => retire()}> {show} </li>
-                </ul>      
-            </nav>
-        </div>
+        <nav className="menu">
+          <div className="date">{date}</div>
+          <div>see vendors</div>
+          <div onClick={() => retire()}> {show} </div>
+        </nav>
       </div>
     </div>
   );

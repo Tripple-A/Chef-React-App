@@ -17,7 +17,6 @@ export const AuthForm = ({
 }) => {
   return (
     <div className="authWrapper">
-      {/* {errors.length > 1 ? <div>error </div> : ""} */}
       <div className="authImg">
         <AuthImg />
         <div className="hot">
@@ -28,11 +27,12 @@ export const AuthForm = ({
       </div>
       <div className="authFormWrapper">
         <h1>{authHeader}</h1>
+        {errors.length > 0 ? <div className="authError">{errors} </div> : ""}
         <form className="authForm" onSubmit={handleSubmit}>
           {type === "signup" ? (
             <div className="authField">
               <div>
-                <label for="name">Name: </label>
+                <label htmlFor="name">Name: </label>
               </div>
 
               <input
@@ -48,7 +48,7 @@ export const AuthForm = ({
           )}
           <div className="authField">
             <div>
-              <label for="email">E-mail: </label>
+              <label htmlFor="email">E-mail: </label>
             </div>
 
             <input
@@ -62,7 +62,7 @@ export const AuthForm = ({
           </div>
           <div className="authField">
             <div>
-              <label for="name">Password: </label>
+              <label htmlFor="name">Password: </label>
             </div>
             <div className="passwordInput">
               <input
@@ -91,7 +91,7 @@ export const AuthForm = ({
               </div>
             ) : (
               <div>
-                <p>
+                <p className="switch">
                   Don't have an account yet? <Link to="/signup">Sign up</Link>
                 </p>
               </div>

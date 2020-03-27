@@ -43,7 +43,7 @@ class Dashboard extends Component {
     fd.append("image", this.state.image);
     fd.append("id", this.props.user.id);
     axios
-      .post("${apiUrl}/add", fd)
+      .post(`${apiUrl}/add`, fd)
       .then(res => this.setState({ src: res.data.src }));
   };
 
