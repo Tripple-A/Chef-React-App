@@ -1,19 +1,8 @@
 import React, { Component } from "react";
-import ImageUploader from "react-images-upload";
 import axios from "axios";
 import { apiUrl } from "../helpers/helperFns";
 import { connect } from "react-redux";
-import Continental from "../images/meals/continental.jpg";
-import Continental2 from "../images/meals/continental2.jpg";
-import Continental3 from "../images/meals/continental3.jpg";
-import native from "../images/meals/native.jpg";
-import native2 from "../images/meals/native2.jpeg";
-import native3 from "../images/meals/native3.jpg";
-import native4 from "../images/meals/native4.jpg";
-import pastries from "../images/meals/pastries.jpg";
-import pastries2 from "../images/meals/patries2.jpeg";
-import pastries3 from "../images/meals/pastries3.jpg";
-import pastries5 from "../images/meals/pastries5.jpg";
+import { FilterVendors } from "./FilterVendors";
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -49,42 +38,42 @@ class Dashboard extends Component {
 
   render() {
     const { user } = this.props;
-    const pics = data => {
-      const conti = [Continental, Continental2, Continental3];
-      const nati = [native, native2, native3, native4];
-      const pastri = [pastries, pastries2, pastries3, pastries5];
-      const ran = arr => Math.floor(Math.random() * Math.floor(arr.length));
-      if (data === "Continental Dishes") {
-        return conti[ran(conti)];
-      } else if (data === "Native Dishes") {
-        return nati[ran(nati)];
-      } else if (data === "Pastries") {
-        return pastri[ran(pastri)];
-      }
-    };
+    // const pics = data => {
+    //   // const conti = [Continental, Continental2, Continental3];
+    //   // const nati = [native, native2, native3, native4];
+    //   // const pastri = [pastries, pastries2, pastries3, pastries5];
+    //   const ran = arr => Math.floor(Math.random() * Math.floor(arr.length));
+    //   if (data === "Continental Dishes") {
+    //     return conti[ran(conti)];
+    //   } else if (data === "Native Dishes") {
+    //     return nati[ran(nati)];
+    //   } else if (data === "Pastries") {
+    //     return pastri[ran(pastri)];
+    //   }
+    // };
 
-    const chefs = this.state.chefs.map(chef => (
-      <div key={chef.id} className="content col-md-12 row">
-        <div className="col-md-5">
-          <img className="pics" src={pics(chef.specialty)} alt="website logo" />
-        </div>
-        <div className="col-md-7 desc">
-          <div>
-            <span> Company Name: </span> {chef.company_name}
-          </div>
-          <div>
-            {" "}
-            <span> Specialty: </span>
-            {chef.specialty}
-          </div>
-          <div>
-            {" "}
-            <span> Location: </span>
-            {chef.location}
-          </div>
-        </div>
-      </div>
-    ));
+    // const chefs = this.state.chefs.map(chef => (
+    //   <div key={chef.id} className="content col-md-12 row">
+    //     <div className="col-md-5">
+    //       <img className="pics" src={pics(chef.specialty)} alt="website logo" />
+    //     </div>
+    //     <div className="col-md-7 desc">
+    //       <div>
+    //         <span> Company Name: </span> {chef.company_name}
+    //       </div>
+    //       <div>
+    //         {" "}
+    //         <span> Specialty: </span>
+    //         {chef.specialty}
+    //       </div>
+    //       <div>
+    //         {" "}
+    //         <span> Location: </span>
+    //         {chef.location}
+    //       </div>
+    //     </div>
+    //   </div>
+    // ));
     return (
       <div className="bg-light-skin min-h-screen">
         {/* <div style={{ display: "flex" }}>
@@ -119,20 +108,23 @@ class Dashboard extends Component {
         <div className="container row row1 ">{chefs}</div> */}
         <div className="md:flex md:justify-between md:ml-20 md:mr-6">
           <div className="sm:mt-0 md:mt-4 text-dark-skin">
-            <h2 className="sm:text-2xl md:text-5xl ">Dashboard</h2>
-            <p className="sm:ml-4 md:ml-2 font-medium">
+            <h2 className="sm:text-2xl md:text-5xl md:block md:mt-20">
+              Dashboard
+            </h2>
+            <p className="sm:ml-4 md:ml-2 font-semibold text-dark ">
               What would you like to do today?
             </p>
           </div>
-          <div className="mt-4 text-dark-skin">
-            <div className="bg-dark-skin w-6/12 md:w-full ml-4 md:text-right p-2 md:p-4 md:text-xl font-semibold text-white rounded-md ">
+          <div className="mt-4 text-dark-skin md:mr-20">
+            <div className="bg-dark-skin w-6/12 md:w-full ml-4 md:text-right p-2 md:p-4 md:text-xl font-semibold text-white rounded-md mt-20">
               Welcome, {user.name}
             </div>
-            <p className="font-medium text-left md:text-right mt-2">
-              Wallet balance: N2,000
+            <p className="font-medium md:text-right mt-2">
+              Wallet balance: <span className="text-dark">N2,000</span>
             </p>
           </div>
         </div>
+        <FilterVendors />
       </div>
     );
   }

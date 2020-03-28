@@ -39,26 +39,48 @@ const Header = ({ logged_in, logoutUser, user }) => {
     becomeVendorToggler = <Link to={profile}>Vendor Profile </Link>;
   } else if (logged_in && !user.vendor) {
     becomeVendorToggler = (
-      <button>
-        <Link to={newven} className="text-dark-skin">
-          become a vendor
-        </Link>
-      </button>
+      <Link to={newven} className="text-dark-skin">
+        become a vendor
+      </Link>
     );
   } else if (!logged_in) {
     becomeVendorToggler = "";
   }
 
   return (
-    <div className="menuWrapper ">
+    <div className="menuWrapper fixed ">
       <div className="logo">
         <Logo />
       </div>
+      <div className={` ${!logged_in ? "hidden" : ""}menu-wrap lg:hidden`}>
+        <input
+          type="checkbox"
+          className={` ${!logged_in ? "hidden" : "toggler"}`}
+        />
+        <div className="hamburger">
+          <div></div>
+        </div>
+        <div className="menu">
+          <div>
+            <div>
+              <ul>
+                <li>{becomeVendorToggler}</li>
+                <li>
+                  <Link className="menu-link text-dark-skin" to="#">
+                    saved vendors
+                  </Link>
+                </li>
+                <li>{showLogout}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className={`menuMain ${logged_in ? "bg-light-skin" : ""} `}>
         <nav
-          className={`menu ${
+          className={`menuu ${
             logged_in ? "md:invisible lg:visible" : ""
-          } mt-4 flex justify-around text-center`}
+          } mt-4 flex justify-around text-center mr-20`}
         >
           <div className={`${!logged_in ? "visible" : "invisible"}`}>
             {date}
