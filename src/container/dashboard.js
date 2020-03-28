@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../styles/Dashboard.scss";
 import { apiUrl } from "../helpers/helperFns";
 import { connect } from "react-redux";
 import { FilterVendors } from "./FilterVendors";
@@ -93,33 +94,25 @@ class Dashboard extends Component {
           Find vendors by their specialty, location or both.
         </h5>
         <form className="form-group">
-          <select className="form-control">
-            <option>All Locations</option>
-          </select>
-          <select className="form-control">
-            <option value="All Specialties">All Specialties</option>
-            <option value="Continental Dishes">Continental Dishes</option>
-            <option value="Native Dishes">Native Dishes</option>
-            <option value="Pastries">Pastries</option>
-          </select>
+
           <button className="btn btn-primary">GO</button>
         </form>
 
         <div className="container row row1 ">{chefs}</div> */}
-        <div className="md:flex md:justify-between md:ml-20 md:mr-6 max-w-screen-lg m-auto">
-          <div className="sm:mt-0 md:mt-4 text-dark-skin">
-            <h2 className="sm:text-2xl md:text-5xl md:block md:mt-20">
+        <div className="md:flex md:justify-between md:ml-20 md:mr-6 max-w-screen-lg m-auto dashboard-grid">
+          <div className="md:ml-20 lg:ml-0 text-dark-skin dashboard-text">
+            <h2 className="sm:text-2xl md:text-5xl md:block md:mt-20 dash">
               Dashboard
             </h2>
-            <p className="sm:ml-4 md:ml-2 font-semibold text-dark ">
+            <p className="sm:ml-4 md:ml-2 font-semibold text-dark today ">
               What would you like to do today?
             </p>
           </div>
-          <div className="mt-4 text-dark-skin md:mr-20">
-            <div className="bg-dark-skin w-6/12 md:w-full ml-4 md:text-right p-2 md:p-4 md:text-xl font-semibold text-white rounded-md mt-20">
+          <div className="sm:mt-4 text-dark-skin md:mr-20 welcome">
+            <div className="bg-dark-skin md:w-full ml-4 md:text-right p-2 md:p-4 md:text-xl font-semibold text-white rounded-md sm:mt-20 welcome-text">
               Welcome, {user.name}
             </div>
-            <p className="font-medium md:text-right mt-2">
+            <p className="font-medium md:text-right mt-2 balance">
               Wallet balance: <span className="text-dark">N2,000</span>
             </p>
           </div>

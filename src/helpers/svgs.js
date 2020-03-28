@@ -289,7 +289,7 @@ export const AuthImg = () => {
 
 export const Logo = () => {
   return (
-    <div className="logoSvg md:ml-20">
+    <div className="logoSvg">
       <svg
         width="200"
         height="76"

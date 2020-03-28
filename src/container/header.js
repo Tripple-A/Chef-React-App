@@ -22,7 +22,6 @@ const Header = ({ logged_in, logoutUser, user }) => {
     });
   };
 
-  const date = new Date().toDateString();
   const profile = `/vendor/${user.id}`;
   const newven = `/newVendor/${user.id}`;
   const showLogout = logged_in ? (
@@ -36,7 +35,11 @@ const Header = ({ logged_in, logoutUser, user }) => {
   let becomeVendorToggler = "";
 
   if (logged_in && user.vendor) {
-    becomeVendorToggler = <Link to={profile}>Vendor Profile </Link>;
+    becomeVendorToggler = (
+      <Link to={profile} className="text-dark-skin">
+        Vendor Profile{" "}
+      </Link>
+    );
   } else if (logged_in && !user.vendor) {
     becomeVendorToggler = (
       <Link to={newven} className="text-dark-skin">
@@ -49,7 +52,11 @@ const Header = ({ logged_in, logoutUser, user }) => {
 
   return (
     <div className="menuWrapper fixed lg:max-w-sm">
-      <div className="logo">
+      <div
+        className={`logo ${logged_in ? "md:ml-20" : ""} ${
+          !logged_in ? "ml-10" : ""
+        }`}
+      >
         <Logo />
       </div>
       <div className={` ${!logged_in ? "hidden" : ""}menu-wrap lg:hidden`}>
@@ -66,7 +73,12 @@ const Header = ({ logged_in, logoutUser, user }) => {
               <ul>
                 <li>{becomeVendorToggler}</li>
                 <li>
-                  <Link className="menu-link text-dark-skin" to="#">
+                  <Link
+                    className={` ${
+                      !logged_in ? "invisible" : ""
+                    } menu-link text-dark-skin`}
+                    to="#"
+                  >
                     saved vendors
                   </Link>
                 </li>
@@ -82,11 +94,12 @@ const Header = ({ logged_in, logoutUser, user }) => {
             logged_in ? "md:invisible lg:visible" : ""
           } mt-4 flex justify-around text-center mr-20`}
         >
-          <div className={`${!logged_in ? "visible" : "invisible"}`}>
-            {date}
-          </div>
           <div className={`${!logged_in ? "ml-4  mr-20" : ""}`}>
-            <Link className="text-dark-skin">see vendors</Link>
+            <Link
+              className={` ${!logged_in ? "invisible" : ""} text-dark-skin`}
+            >
+              see vendors
+            </Link>
           </div>
           <div>{becomeVendorToggler}</div>
           <div> {showLogout} </div>
