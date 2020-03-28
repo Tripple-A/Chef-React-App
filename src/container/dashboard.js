@@ -106,7 +106,7 @@ class Dashboard extends Component {
         </form>
 
         <div className="container row row1 ">{chefs}</div> */}
-        <div className="md:flex md:justify-between md:ml-20 md:mr-6">
+        <div className="md:flex md:justify-between md:ml-20 md:mr-6 max-w-screen-lg m-auto">
           <div className="sm:mt-0 md:mt-4 text-dark-skin">
             <h2 className="sm:text-2xl md:text-5xl md:block md:mt-20">
               Dashboard

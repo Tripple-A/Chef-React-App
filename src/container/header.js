@@ -48,7 +48,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
   }
 
   return (
-    <div className="menuWrapper fixed ">
+    <div className="menuWrapper fixed lg:max-w-sm">
       <div className="logo">
         <Logo />
       </div>
