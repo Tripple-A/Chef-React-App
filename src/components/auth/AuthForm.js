@@ -1,9 +1,7 @@
 import React from "react";
-import "../styles/AuthForm.scss";
+import "../../styles/AuthForm.scss";
 import { Link } from "react-router-dom";
-import { AuthImg } from "../../helpers/svgs";
-import { Blob } from "../../helpers/svgs";
-import { Eye } from "../../helpers/svgs";
+import { AuthImg, Blob, Eye } from "../../helpers/svgs";
 
 export const AuthForm = ({
   type,
@@ -12,7 +10,9 @@ export const AuthForm = ({
   handleSubmit,
   email,
   password,
-  handleChange
+  handleChange,
+  errors,
+  authenticating
 }) => {
   return (
     <div className="authWrapper">
@@ -26,11 +26,12 @@ export const AuthForm = ({
       </div>
       <div className="authFormWrapper">
         <h1>{authHeader}</h1>
+        {errors.length > 0 ? <div className="authError">{errors} </div> : ""}
         <form className="authForm" onSubmit={handleSubmit}>
           {type === "signup" ? (
             <div className="authField">
               <div>
-                <label for="name">Name: </label>
+                <label htmlFor="name">Name: </label>
               </div>
 
               <input
@@ -46,7 +47,7 @@ export const AuthForm = ({
           )}
           <div className="authField">
             <div>
-              <label for="email">E-mail: </label>
+              <label htmlFor="email">E-mail: </label>
             </div>
 
             <input
@@ -60,7 +61,7 @@ export const AuthForm = ({
           </div>
           <div className="authField">
             <div>
-              <label for="name">Password: </label>
+              <label htmlFor="name">Password: </label>
             </div>
             <div className="passwordInput">
               <input
@@ -77,6 +78,20 @@ export const AuthForm = ({
           <div className="submit">
             <button type="submit" className="submitAuth">
               {authHeader}
+              {authenticating ? (
+                <svg className="spinner" viewBox="0 0 50 50">
+                  <circle
+                    className="path"
+                    cx="25"
+                    cy="25"
+                    r="20"
+                    fill="none"
+                    strokeWidth="5"
+                  ></circle>
+                </svg>
+              ) : (
+                ""
+              )}
             </button>
           </div>
 
@@ -89,8 +104,8 @@ export const AuthForm = ({
               </div>
             ) : (
               <div>
-                <p>
-                  Don't have an account yet? <Link to="/signup">Sign up</Link>
+                <p className="switch">
+                  Don't have an account? <Link to="/signup">Sign up</Link>
                 </p>
               </div>
             )}
