@@ -31,8 +31,11 @@
   }
 }
 
+.date {
+  margin-right: 2em;
+  color: black;
+}
 .menu {
-  flex-wrap: nowrap;
   width: calc(2vw * 20);
   font-family: Poppins;
   font-size: 1.1em;
@@ -40,7 +43,7 @@
   color: #60723d;
   margin-top: 4%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   @media screen and (max-width: 480px) {
     visibility: hidden;
   }

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
-import SignUp from "./components/signUp";
-import SignIn from "./components/signIn";
-import Dashboard from "./components/dashboard";
-import Header from "./components/header";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import SignUp from "./container/signUp";
+import SignIn from "./container/signIn";
+import Dashboard from "./container/dashboard";
+import Header from "./container/header";
 import NewVendor from "./components/newVendor";
 import VendorProfile from "./components/vendorProfile";
 class App extends Component {

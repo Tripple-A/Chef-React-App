@@ -14,10 +14,7 @@
 
 .authImg {
   background-color: #fdffef;
-
-  @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
-    height: 70vh;
-  }
+  padding-bottom: 2em;
 }
 
 .hot {
@@ -52,18 +49,27 @@
 .authFormWrapper {
   h1 {
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 10%;
     font-size: 3em;
   }
+
+  .authError {
+    margin-left: 10%;
+    color: red;
+  }
+  margin: 0 auto;
 
   input {
     border: 0;
     border-bottom: 1px solid black;
-    width: 80%;
+    width: 70%;
     padding: 0.2em;
     background-color: transparent;
     @media screen and (max-width: 480px) {
       width: 95%;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      width: 90%;
     }
   }
 
@@ -80,6 +86,9 @@
     @media screen and (max-width: 480px) {
       margin-top: 1em;
     }
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin: 15% auto;
   }
 }
 
@@ -99,13 +108,18 @@
 .submitAuth {
   border: 0;
   background-color: #969f60;
-  padding: 2% 30%;
+  padding: 3% 0;
+  width: 90%;
   margin-top: 10%;
   color: white;
   font-weight: 600;
   font-size: 1.7em;
   border-radius: 15px;
   box-shadow: 2px 1px 2px grey;
+  @media (min-width: 1000px) {
+    width: 70%;
+    padding: 2% 0;
+  }
 }
 
 .passwordInput {
@@ -113,13 +127,21 @@
 }
 
 .switchAuth {
-  text-align: center;
+  width: 70%;
   margin-top: 5%;
   font-size: 110%;
-  margin: 0.5em 3em;
+  margin: 0.5em 4em;
   text-align: center;
-}
 
-.submit {
-  text-align: center;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin: 0.5em 2em;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin: 0.5em auto;
+  }
+
+  .switch {
+    text-align: center;
+  }
 }
