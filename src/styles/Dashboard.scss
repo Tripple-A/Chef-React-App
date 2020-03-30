@@ -1,0 +1,57 @@
+@media (max-width: 415px) {
+  .dashboard-text {
+    padding-top: 3%;
+    margin-left: 5%;
+    margin: 0 auto;
+    font-weight: 700;
+  }
+
+  .dash {
+    font-size: 1.5em;
+  }
+
+  .today {
+    display: none;
+  }
+
+  .welcome-text {
+    text-align: center;
+    margin-left: 0 !important;
+    padding: 10px 100px;
+  }
+  .welcome {
+    padding-top: 25%;
+    margin: 0 auto;
+  }
+  .dashboard-grid {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .balance {
+    display: none;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 765px) {
+  .dash {
+    padding-top: 100px;
+    font-size: 3em;
+    text-align: center;
+  }
+  .today {
+    display: none;
+  }
+
+  .welcome-text {
+    text-align: center;
+  }
+  .welcome {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  .balance {
+    text-align: center;
+  }
+}

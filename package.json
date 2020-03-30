@@ -20,10 +20,11 @@
     "redux": "^4.0.5"
   },
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "npm run build:style && PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:style": "tailwind build src/styles/index.scss -o src/styles/App.scss"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,5 +40,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.5",
+    "postcss-cli": "^7.1.0",
+    "tailwindcss": "^1.2.0"
   }
 }
