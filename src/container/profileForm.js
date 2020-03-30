@@ -6,9 +6,13 @@ export default class ProfileForm extends Component {
     company_name: "",
     location: "",
     specialty: "",
-    pitch: ""
+    pitch: "",
+    logo: "",
   };
 
+  uploadWidget = (widget) => {
+    widget.open()
+  }
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -30,7 +34,8 @@ export default class ProfileForm extends Component {
           company_name,
           location,
           specialty,
-          pitch
+          pitch,
+          user_id:this.props.user_id
         },
         { withCredentials: true }
       )
@@ -45,6 +50,16 @@ export default class ProfileForm extends Component {
       </option>
     ));
     const { companyName, location, specialty, pitch } = this.state;
+    let myWidget = window.cloudinary.createUploadWidget({
+      cloudName: 'da3ukbr9v', 
+      uploadPreset: 'urcvogho'}, (error, result) => { 
+        if (!error && result && result.event === "success") { 
+          const  url = result.info.secure_url
+          console.log(url);
+          this.setState({logo: url}) 
+        } else {console.log(error)}
+      }
+    )
     return (
       <div>
         <button onClick={this.toggleForm}>Profile Form</button>{" "}
@@ -90,6 +105,7 @@ export default class ProfileForm extends Component {
             onChange={this.handleChange}
             value={pitch}
           ></input>
+          <button id="upload_widget" className="cloudinary-button" onClick={()=>this.uploadWidget(myWidget)}>Upload Company Logo</button> <br></br>
           <button onClick={this.createProfile}>Save</button>
           <button onClick={this.toggleForm}> Cancel </button>
         </form>
