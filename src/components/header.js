@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
 const Header = ({ logged_in, logoutUser, user }) => {
   const retire = () => {
     axios
-      .delete("http://localhost:3002/logout", { withCredentials: true })
+      .delete("https://foodie-apiv1.herokuapp.com/logout", { withCredentials: true })
       .then(response => {
         if (response.data.logged_out) logoutUser();
       });
