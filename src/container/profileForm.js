@@ -26,7 +26,7 @@ export default class ProfileForm extends Component {
   };
   createProfile = e => {
     e.preventDefault();
-    const { company_name, location, specialty, pitch } = this.state;
+    const { company_name, location, specialty, pitch, logo } = this.state;
     axios
       .post(
         "https://foodie-apiv1.herokuapp.com/profiles",
@@ -35,6 +35,7 @@ export default class ProfileForm extends Component {
           location,
           specialty,
           pitch,
+          logo,
           user_id:this.props.user_id
         },
         { withCredentials: true }
@@ -99,13 +100,15 @@ export default class ProfileForm extends Component {
           </select>
           <label>Elevator Pitch</label>
           <input
-            class="form-control"
+            className="form-control"
             required
             name="pitch"
             onChange={this.handleChange}
             value={pitch}
           ></input>
-          <button id="upload_widget" className="cloudinary-button" onClick={()=>this.uploadWidget(myWidget)}>Upload Company Logo</button> <br></br>
+          <label>Upload Company Logo(Optional)</label>
+          <button id="upload_widget" className="cloudinary-button" 
+          onClick={()=>this.uploadWidget(myWidget)}>Crop and upload</button> <br></br>
           <button onClick={this.createProfile}>Save</button>
           <button onClick={this.toggleForm}> Cancel </button>
         </form>
