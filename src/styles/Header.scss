@@ -21,13 +21,17 @@ $menu-speed: 0.75s;
     text-align: center;
     margin-left: 5%;
   }
+
+  @media (min-width: 430px) and (max-width: 620px) {
+    margin-left: 10%;
+  }
 }
 
 .menuMain {
   display: flex;
   justify-content: flex-end;
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 700px) {
     display: none;
   }
 
@@ -39,19 +43,6 @@ $menu-speed: 0.75s;
 
 .menuu {
   width: calc(2vw * 20);
-  //   font-family: Poppins;
-  //   font-size: 1.1em;
-  //   margin-right: 10%;
-  // color: #60723d;
-  //   margin-top: 4%;
-  //   display: flex;
-  //   justify-content: flex-end;
-  //   @media screen and (max-width: 480px) {
-  //     visibility: hidden;
-  //   }
-  //   @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
-  //     width: calc(2vw * 40);
-  //   }
 }
 
 .menu-wrap {

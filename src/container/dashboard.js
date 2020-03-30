@@ -100,7 +100,7 @@ class Dashboard extends Component {
 
         <div className="container row row1 ">{chefs}</div> */}
         <div className="md:flex md:justify-between md:ml-20 md:mr-6 max-w-screen-lg m-auto dashboard-grid">
-          <div className="md:ml-20 lg:ml-0 text-dark-skin dashboard-text">
+          <div className="sm:ml-20 text-dark-skin dashboard-text">
             <h2 className="sm:text-2xl md:text-5xl md:block md:mt-20 dash">
               Dashboard
             </h2>
@@ -108,8 +108,8 @@ class Dashboard extends Component {
               What would you like to do today?
             </p>
           </div>
-          <div className="sm:mt-4 text-dark-skin md:mr-20 welcome">
-            <div className="bg-dark-skin md:w-full ml-4 md:text-right p-2 md:p-4 md:text-xl font-semibold text-white rounded-md sm:mt-20 welcome-text">
+          <div className="sm:mt-4 text-dark-skin sm:mr-20 welcome">
+            <div className="bg-dark-skin md:w-full ml-4 md:text-right p-2 md:p-4 md:text-xl font-semibold text-white rounded-md md:mt-20 welcome-text">
               Welcome, {user.name}
             </div>
             <p className="font-medium md:text-right mt-2 balance">

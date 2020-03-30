@@ -53,7 +53,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
   return (
     <div className="menuWrapper fixed lg:max-w-sm">
       <div
-        className={`logo ${logged_in ? "md:ml-20" : ""} ${
+        className={`logo ${logged_in ? "sm:ml-20" : ""} ${
           !logged_in ? "ml-10" : ""
         }`}
       >
@@ -91,7 +91,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
       <div className={`menuMain ${logged_in ? "bg-light-skin" : ""} `}>
         <nav
           className={`menuu ${
-            logged_in ? "md:invisible lg:visible" : ""
+            logged_in ? "sm:invisible lg:visible" : ""
           } mt-4 flex justify-around text-center mr-20`}
         >
           <div className={`${!logged_in ? "ml-4  mr-20" : ""}`}>
