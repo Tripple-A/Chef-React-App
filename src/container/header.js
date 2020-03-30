@@ -98,7 +98,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
             <Link
               className={` ${!logged_in ? "invisible" : ""} text-dark-skin`}
             >
-              see vendors
+              saved vendors
             </Link>
           </div>
           <div>{becomeVendorToggler}</div>
