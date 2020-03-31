@@ -73,7 +73,10 @@ export default class ProfileForm extends Component {
             Profile Form
           </span>
         </button>{" "}
-        <form className="form-group pform pt-4 pr-4" style={{ display: "" }}>
+        <form
+          className="form-group pform pt-4 pr-4"
+          style={{ display: "none" }}
+        >
           <label>Company name: </label>
           <input
             className="form-control"
