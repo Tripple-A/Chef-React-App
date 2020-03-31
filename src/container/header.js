@@ -57,7 +57,9 @@ const Header = ({ logged_in, logoutUser, user }) => {
           !logged_in ? "ml-10" : ""
         }`}
       >
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
       </div>
       <div className={` ${!logged_in ? "hidden" : ""}menu-wrap lg:hidden`}>
         <input
