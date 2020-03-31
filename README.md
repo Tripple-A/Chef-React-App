@@ -1,68 +1,93 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Chef-React-App
+This is a react app to help people in need of cooked meals find food vendors around them .  It is a constant struggle to have a variety of choices when it comes to good food,with this app,we bridge that gap. 
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+* [User Features](#user-features)
+* [Concepts and Apis Employed](#concepts-and-apis-employed)
+* [Built With](#built-with)
+* [Live Preview](#live-preview)
+* [Required Installations](#required-installations)
+* [Instalation of This App](#instalation)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- User features -->
+## User Features
+* A user has access to all vendors registered on the app.
+* A user upon sign-in can visit a particular vendor's page,view what is available and then,make an order.
+* Users can also become vendors upon sign-up after payment of a fee.
+* Users who are vendors can create their vendor profile and constantly upload meal-pictures to entice their customers.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<!-- concepts and apis employed -->
+## Concepts and APIs Employed
+* The API employed to persist user information was built by me using Rails and can be found [here](https://github.com/Tripple-A/Get-hired-Api) in the chef-app branch.
+* Paystack API is employed for payments.
+* Axios is employed for all http requests.
+* Redux is used for state management.
+* Javascript asynchronous functions are employed using the async,await,try and catch keywords.
 
-### `yarn test`
+<!-- BUILT WITH -->
+## Built With
+* HTML5
+* CSS3
+* Tailwind CSS
+* Bootstrap
+* JAVASCRIPT(ES6)
+* React
+* Redux
+* Rails (API)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- LIVE PREVIEW -->
+## LIVE PREVIEW
+Find the live version [here](https://condescending-shirley-958d67.netlify.com/).
+A screenshot of how it looks shall be added in due course.
+![Image](/src/proof.png)
 
-### `yarn build`
+<!-- REQUIRED INSTALLATION -->
+## REQUIRED INSTALLATIONS
+* npm
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- INSTALLATION -->
+## Installation of This Repository
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Once you have installed the requiered packages shown on the [Required Installations](#required-installations), proceed with the following steps
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone the Repository,
 
-### `yarn eject`
+```Shell
+your@pc:~$ git clone git@github.com:Tripple-A/Chef-React-App.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Move to the downloaded folder
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```Shell
+your@pc:~$ cd Chef-React-App
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Install all packages
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```Shell
+your@pc:~$ npm install
+```
 
-## Learn More
+Open the app
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```Shell
+your@pc:~$ npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
+Distributed under the MIT License. See `LICENSE` for more information.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<!-- CONTACT -->
+## Contact
+* Abiodun Ajibade - biodun9@gmail.com | [Github Account](https://github.com/Tripple-A)
 
-### Analyzing the Bundle Size
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* <a href="https://www.microverse.org/"> Microverse</a>  and God Almighty .
