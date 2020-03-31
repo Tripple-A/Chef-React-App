@@ -8,7 +8,7 @@ const NewVendor = () => (
         <h3 className="text-center text-lg font-medium pt-10 m-10 md:text-xl">
           It is our pleasure to present your products to the Foodie Community.
         </h3>
-        <h4 className="text-center text-sm pb-4">
+        <h4 className="text-center text-base pb-4">
           In order to proceed, please complete the payment below.
         </h4>
 
