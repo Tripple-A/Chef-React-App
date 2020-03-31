@@ -39,66 +39,8 @@ class Dashboard extends Component {
 
   render() {
     const { user } = this.props;
-    // const pics = data => {
-    //   // const conti = [Continental, Continental2, Continental3];
-    //   // const nati = [native, native2, native3, native4];
-    //   // const pastri = [pastries, pastries2, pastries3, pastries5];
-    //   const ran = arr => Math.floor(Math.random() * Math.floor(arr.length));
-    //   if (data === "Continental Dishes") {
-    //     return conti[ran(conti)];
-    //   } else if (data === "Native Dishes") {
-    //     return nati[ran(nati)];
-    //   } else if (data === "Pastries") {
-    //     return pastri[ran(pastri)];
-    //   }
-    // };
-
-    // const chefs = this.state.chefs.map(chef => (
-    //   <div key={chef.id} className="content col-md-12 row">
-    //     <div className="col-md-5">
-    //       <img className="pics" src={pics(chef.specialty)} alt="website logo" />
-    //     </div>
-    //     <div className="col-md-7 desc">
-    //       <div>
-    //         <span> Company Name: </span> {chef.company_name}
-    //       </div>
-    //       <div>
-    //         {" "}
-    //         <span> Specialty: </span>
-    //         {chef.specialty}
-    //       </div>
-    //       <div>
-    //         {" "}
-    //         <span> Location: </span>
-    //         {chef.location}
-    //       </div>
-    //     </div>
-    //   </div>
-    // ));
     return (
       <div className="bg-light-skin min-h-screen">
-        {/* <div style={{ display: "flex" }}>
-          <img src={this.state.src} alt="profile pic" />
-          <h4 className="text-blue-300"> Hi {user.name}</h4>
-          <ImageUploader
-            withIcon={true}
-            buttonText="Choose images"
-            onChange={event => this.fileSelect(event)}
-            imgExtension={[".jpg", ".gif", ".png", ".gif", ".jpeg"]}
-          />
-          <button onClick={this.uploadPic}>upload</button>
-        </div>
-
-        <h5 class="text-red-400">
-          {" "}
-          Find vendors by their specialty, location or both.
-        </h5>
-        <form className="form-group">
-
-          <button className="btn btn-primary">GO</button>
-        </form>
-
-        <div className="container row row1 ">{chefs}</div> */}
         <div className="md:flex md:justify-between md:ml-20 md:mr-6 max-w-screen-lg m-auto dashboard-grid">
           <div className="md:ml-20 text-dark-skin dashboard-text">
             <h2 className="sm:text-2xl md:text-5xl md:block md:mt-20 dash">

@@ -27,7 +27,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
   const showLogout = logged_in ? (
     <button onClick={() => retire()}>
       {" "}
-      <span className="text-dark-skin">log out</span>
+      <span className="text-dark-skin">Log out</span>
     </button>
   ) : (
     <Redirect to="/" />
@@ -43,7 +43,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
   } else if (logged_in && !user.vendor) {
     becomeVendorToggler = (
       <Link to={newven} className="text-dark-skin">
-        become a vendor
+        Become a vendor
       </Link>
     );
   } else if (!logged_in) {
@@ -81,7 +81,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
                     } menu-link text-dark-skin`}
                     to="#"
                   >
-                    saved vendors
+                    Saved vendors
                   </Link>
                 </li>
                 <li>{showLogout}</li>
@@ -100,7 +100,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
             <Link
               className={` ${!logged_in ? "invisible" : ""} text-dark-skin`}
             >
-              saved vendors
+              Saved vendors
             </Link>
           </div>
           <div>{becomeVendorToggler}</div>
