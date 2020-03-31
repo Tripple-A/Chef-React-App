@@ -6,9 +6,13 @@ export default class ProfileForm extends Component {
     company_name: "",
     location: "",
     specialty: "",
-    pitch: ""
+    pitch: "",
+    logo: "",
   };
 
+  uploadWidget = (widget) => {
+    widget.open()
+  }
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -22,7 +26,7 @@ export default class ProfileForm extends Component {
   };
   createProfile = e => {
     e.preventDefault();
-    const { company_name, location, specialty, pitch } = this.state;
+    const { company_name, location, specialty, pitch, logo } = this.state;
     axios
       .post(
         "https://foodie-apiv1.herokuapp.com/profiles",
@@ -30,7 +34,9 @@ export default class ProfileForm extends Component {
           company_name,
           location,
           specialty,
-          pitch
+          pitch,
+          logo,
+          user_id:this.props.user_id
         },
         { withCredentials: true }
       )
@@ -45,6 +51,16 @@ export default class ProfileForm extends Component {
       </option>
     ));
     const { companyName, location, specialty, pitch } = this.state;
+    let myWidget = window.cloudinary.createUploadWidget({
+      cloudName: 'da3ukbr9v', 
+      uploadPreset: 'urcvogho'}, (error, result) => { 
+        if (!error && result && result.event === "success") { 
+          const  url = result.info.secure_url
+          console.log(url);
+          this.setState({logo: url}) 
+        } else {console.log(error)}
+      }
+    )
     return (
       <div>
         <button onClick={this.toggleForm}>Profile Form</button>{" "}
@@ -84,12 +100,15 @@ export default class ProfileForm extends Component {
           </select>
           <label>Elevator Pitch</label>
           <input
-            class="form-control"
+            className="form-control"
             required
             name="pitch"
             onChange={this.handleChange}
             value={pitch}
           ></input>
+          <label>Upload Company Logo(Optional)</label>
+          <button id="upload_widget" className="cloudinary-button" 
+          onClick={()=>this.uploadWidget(myWidget)}>Crop and upload</button> <br></br>
           <button onClick={this.createProfile}>Save</button>
           <button onClick={this.toggleForm}> Cancel </button>
         </form>

@@ -11,7 +11,7 @@ const VendorProfile = ({ match }) => {
         In order to show up-to-date products to customers,please constantly
         update your profile with your information
       </h3>
-      <ProfileForm />
+      <ProfileForm user_id={id}/>
     </div>
   );
 };
