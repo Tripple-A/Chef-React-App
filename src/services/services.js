@@ -20,9 +20,16 @@ const signup = details => {
     withCredentials: true
   });
 };
+
+const getVendors = () => {
+  return axios.get(`${apiUrl}logged_in`, {
+    withCredentials: true
+  });
+};
 export default {
   logout: logout,
   signin: signin,
   checkLoggedIn: checkLoggedIn,
-  signup: signup
+  signup: signup,
+  getVendors: getVendors
 };

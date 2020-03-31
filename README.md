@@ -23,7 +23,7 @@ This is a react app to help people in need of cooked meals find food vendors aro
 
 <!-- concepts and apis employed -->
 ## Concepts and APIs Employed
-* The API employed to persist user information was built by me using Rails and can be found [here] in the chef-app branch.
+* The API employed to persist user information was built by me using Rails and can be found [here](https://github.com/Tripple-A/Get-hired-Api) in the chef-app branch.
 * Paystack API is employed for payments.
 * Axios is employed for all http requests.
 * Redux is used for state management.

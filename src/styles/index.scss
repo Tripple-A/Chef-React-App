@@ -1,0 +1,30 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+$base-color: #fdffef;
+$dark-color: #969f60;
+$darker-color: #60723d;
+$dark-card: #8ea75c;
+
+.bg-light-skin {
+  background-color: $base-color;
+}
+
+.bg-dark-skin {
+  background-color: $dark-color;
+}
+
+.bg-darker-skin {
+  background-color: $darker-color;
+}
+
+.text-dark-skin {
+  color: $dark-color;
+}
+
+.text-darker-skin {
+  color: $darker-color;
+}

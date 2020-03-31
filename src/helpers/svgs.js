@@ -1,6 +1,6 @@
 import React from "react";
 import { showPassword, hidePassword } from "../helpers/helperFns";
-import "./svgs.scss";
+import "../styles/svgs.scss";
 
 export const AuthImg = () => {
   return (
@@ -291,7 +291,7 @@ export const Logo = () => {
   return (
     <div className="logoSvg">
       <svg
-        width="312"
+        width="200"
         height="76"
         viewBox="0 0 312 76"
         fill="none"
