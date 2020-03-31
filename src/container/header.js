@@ -27,7 +27,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
   const showLogout = logged_in ? (
     <button onClick={() => retire()}>
       {" "}
-      <span className="text-dark-skin">Log out</span>
+      <span className="text-dark-skin text-xl">Log out</span>
     </button>
   ) : (
     <Redirect to="/" />
@@ -36,13 +36,13 @@ const Header = ({ logged_in, logoutUser, user }) => {
 
   if (logged_in && user.vendor) {
     becomeVendorToggler = (
-      <Link to={profile} className="text-dark-skin">
+      <Link to={profile} className="text-dark-skin text-xl">
         Vendor Profile{" "}
       </Link>
     );
   } else if (logged_in && !user.vendor) {
     becomeVendorToggler = (
-      <Link to={newven} className="text-dark-skin">
+      <Link to={newven} className="text-dark-skin hover:no-underline text-xl">
         Become a vendor
       </Link>
     );
@@ -51,17 +51,17 @@ const Header = ({ logged_in, logoutUser, user }) => {
   }
 
   return (
-    <div className="menuWrapper fixed lg:max-w-sm">
+    <div className="menuWrapper fixed bg-light-skin">
       <div
         className={`logo ${logged_in ? "sm:ml-20" : ""} ${
           !logged_in ? "ml-10" : ""
-        }`}
+        } lg:max-w-sm`}
       >
         <Link to="/">
           <Logo />
         </Link>
       </div>
-      <div className={` ${!logged_in ? "hidden" : ""}menu-wrap lg:hidden`}>
+      <div className={` ${!logged_in ? "hidden" : ""} menu-wrap lg:hidden`}>
         <input
           type="checkbox"
           className={` ${!logged_in ? "hidden" : "toggler"}`}
@@ -73,12 +73,22 @@ const Header = ({ logged_in, logoutUser, user }) => {
           <div>
             <div>
               <ul>
+                <li>
+                  <Link
+                    className={` ${
+                      !logged_in ? "invisible" : ""
+                    } menu-link text-dark-skin text-xl`}
+                    to="/"
+                  >
+                    Home
+                  </Link>
+                </li>
                 <li>{becomeVendorToggler}</li>
                 <li>
                   <Link
                     className={` ${
                       !logged_in ? "invisible" : ""
-                    } menu-link text-dark-skin`}
+                    } menu-link text-dark-skin text-xl`}
                     to="#"
                   >
                     Saved vendors
@@ -90,7 +100,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
           </div>
         </div>
       </div>
-      <div className={`menuMain ${logged_in ? "bg-light-skin" : ""} `}>
+      <div className={`menuMain ${logged_in ? "bg-light-skin" : "bg-white"} `}>
         <nav
           className={`menuu ${
             logged_in ? "sm:invisible lg:visible" : ""
@@ -98,11 +108,14 @@ const Header = ({ logged_in, logoutUser, user }) => {
         >
           <div className={`${!logged_in ? "ml-4  mr-20" : ""}`}>
             <Link
-              className={` ${!logged_in ? "invisible" : ""} text-dark-skin`}
+              className={` ${
+                !logged_in ? "invisible" : ""
+              } text-dark-skin hover:no-underline text-xl`}
             >
               Saved vendors
             </Link>
           </div>
+
           <div>{becomeVendorToggler}</div>
           <div> {showLogout} </div>
         </nav>

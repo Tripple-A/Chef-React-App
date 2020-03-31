@@ -42,7 +42,7 @@ class Paystack extends Component {
     const show = this.state.vendor ? (
       <Redirect to="/" />
     ) : (
-      <h3>
+      <h3 className="pb-16 pt-2 text-sm text-center ">
         This page will redirect you to your profile after succesful payment
       </h3>
     );

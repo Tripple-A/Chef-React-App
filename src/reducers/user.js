@@ -1,5 +1,5 @@
 const user = (
-  state = { id: 1, email: "fake@fake.com", name: "Fake!!!!" },
+  state = { id: 1, email: "fake@fake.com", name: "Fake!!!!", vendor: true },
   action
 ) => {
   switch (action.type) {

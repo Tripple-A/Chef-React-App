@@ -4,6 +4,7 @@ import "../styles/Dashboard.scss";
 import { apiUrl } from "../helpers/helperFns";
 import { connect } from "react-redux";
 import { FilterVendors } from "./FilterVendors";
+import { Listvendors } from "../components/Listvendors";
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -60,6 +61,7 @@ class Dashboard extends Component {
           </div>
         </div>
         <FilterVendors />
+        <Listvendors />
       </div>
     );
   }
