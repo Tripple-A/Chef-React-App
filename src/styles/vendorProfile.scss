@@ -1,0 +1,10 @@
+.profileFormContainer {
+  background-color: #fdffef;
+  min-height: 100vh;
+}
+
+.pformWrapper {
+  @media (max-width: 425px) {
+    margin: 2em 2em;
+  }
+}

@@ -36,7 +36,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
 
   if (logged_in && user.vendor) {
     becomeVendorToggler = (
-      <Link to={profile} className="text-dark-skin text-xl">
+      <Link to={profile} className="text-dark-skin hover:no-underline text-xl">
         Vendor Profile{" "}
       </Link>
     );
