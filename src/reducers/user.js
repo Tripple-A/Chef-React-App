@@ -1,7 +1,4 @@
-const user = (
-  state = { id: 1, email: "fake@fake.com", name: "Fake!!!!" },
-  action
-) => {
+const user = (state = { id: 3 }, action) => {
   switch (action.type) {
     case "ASSIGN USER":
       return action.user;

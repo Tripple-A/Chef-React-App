@@ -26,10 +26,17 @@ const getVendors = () => {
     withCredentials: true
   });
 };
+
+const getProfiles = () => {
+  return axios.get(`${apiUrl}profiles`, {
+    withCredentials: true
+  });
+};
 export default {
   logout: logout,
   signin: signin,
   checkLoggedIn: checkLoggedIn,
   signup: signup,
-  getVendors: getVendors
+  getVendors: getVendors,
+  getProfiles: getProfiles
 };

@@ -17,8 +17,8 @@ const mapDispatchToProps = dispatch => ({
 
 const Header = ({ logged_in, logoutUser, user }) => {
   const retire = () => {
-    logoutUser()
-    services.logout()
+    logoutUser();
+    services.logout();
   };
 
   const profile = `/vendor/${user.id}`;
@@ -107,6 +107,16 @@ const Header = ({ logged_in, logoutUser, user }) => {
         >
           <div className={`${!logged_in ? "ml-4  mr-20" : ""}`}>
             <Link
+              to="/"
+              className={` ${
+                !logged_in ? "invisible" : ""
+              } text-dark-skin hover:no-underline text-xl`}
+            >
+              Home
+            </Link>
+          </div>
+          <div className={`${!logged_in ? "ml-4  mr-20" : ""}`}>
+            <Link
               className={` ${
                 !logged_in ? "invisible" : ""
               } text-dark-skin hover:no-underline text-xl`}
@@ -116,7 +126,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
           </div>
 
           <div>{becomeVendorToggler}</div>
-          <div> {showLogout} </div>
+          <div className="mt-1"> {showLogout} </div>
         </nav>
       </div>
     </div>

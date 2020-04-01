@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { uuid } from "uuidv4";
+import services from "../services/services";
 
 export const Listvendors = () => {
-  const vendorProfiles = [
-    "vendor 1",
-    "vendor 2",
-    "vendor 3",
-    "vendor 4",
-    "vendor 5"
-  ];
-  const displayVendors = vendorProfiles.map(vendor => (
+  const [vendors, setVendors] = useState([]);
+
+  useEffect(() => {
+    async function getProfiles() {
+      await services
+        .getProfiles()
+        .then(response => setVendors(response.data.vendors));
+    }
+    getProfiles();
+  }, []);
+
+  const displayVendors = vendors.map(vendor => (
     <div
-      className="max-w-sm rounded overflow-hidden shadow-lg bg-white mb-4 lg:ml-4"
+      className="max-w-sm rounded overflow-hidden shadow-lg bg-white mb-4 md:ml-4 lg:ml-4"
       key={uuid()}
     >
       <img
@@ -20,9 +25,14 @@ export const Listvendors = () => {
         alt="Sunset in the mountains"
       ></img>
       <div className="px-6 py-4 ">
-        <div className="font-bold text-xl mb-2">Vendor name</div>
-        <p>Vendor location</p>
-        <p>Vendor location</p>
+        <div className="font-bold text-xl mb-2 ml-3">{vendor.company_name}</div>
+
+        <p className="bg-gray-200 rounded-full px-3 py-1">
+          <strong>location:</strong> <span>{vendor.location}</span>
+        </p>
+        <p className="bg-gray-200 rounded-full px-3 py-1">
+          <strong>specialty:</strong> <span>{vendor.specialty}</span>
+        </p>
       </div>
     </div>
   ));
