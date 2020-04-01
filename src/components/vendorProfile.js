@@ -2,6 +2,7 @@ import React from "react";
 import ProfileForm from "../container/profileForm";
 import "../styles/vendorProfile.scss";
 
+
 const VendorProfile = ({ match }) => {
   const id = match.params.user_id;
   return (
