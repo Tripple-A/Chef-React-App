@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   font-family: Poppins;
-  padding-top: 5%;
+  padding-top: 4%;
   height: 100vh;
   @media screen and (max-width: 480px) {
     grid-template-columns: 100%;
@@ -50,7 +50,7 @@
 .authFormWrapper {
   h1 {
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 10%;
     font-size: 3em;
     margin-bottom: 0.5em;
   }

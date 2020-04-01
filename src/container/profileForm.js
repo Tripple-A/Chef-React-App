@@ -7,12 +7,12 @@ export default class ProfileForm extends Component {
     location: "",
     specialty: "",
     pitch: "",
-    logo: "",
+    logo: ""
   };
 
-  uploadWidget = (widget) => {
-    widget.open()
-  }
+  uploadWidget = widget => {
+    widget.open();
+  };
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -36,7 +36,7 @@ export default class ProfileForm extends Component {
           specialty,
           pitch,
           logo,
-          user_id:this.props.user_id
+          user_id: this.props.user_id
         },
         { withCredentials: true }
       )
@@ -51,22 +51,48 @@ export default class ProfileForm extends Component {
       </option>
     ));
     const { companyName, location, specialty, pitch } = this.state;
+<<<<<<< HEAD
     let myWidget = window.cloudinary.createUploadWidget({
       cloudName: 'da3ukbr9v', 
       uploadPreset: 'ocyrrq39'}, (error, result) => { 
         if (!error && result && result.event === "success") { 
           const  url = result.info.secure_url
+=======
+    let myWidget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: "da3ukbr9v",
+        uploadPreset: "urcvogho"
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          const url = result.info.secure_url;
+>>>>>>> become-vendor
           console.log(url);
-          this.setState({logo: url}) 
-        } else {console.log(error)}
+          this.setState({ logo: url });
+        } else {
+          console.log(error);
+        }
       }
-    )
+    );
     return (
       <div>
+<<<<<<< HEAD
         <button onClick={this.toggleForm}>Profile Form</button>{" "}
     
         <form className="form-group pform" style={{ display: "none" }}>
           <label style={{ color: "red" }}>CompanyName</label>
+=======
+        <button onClick={this.toggleForm}>
+          <span className="bg-gray-200 rounded-full px-3 py-1 text-xl font-semibold text-gray-700 mr-2">
+            Profile Form
+          </span>
+        </button>{" "}
+        <form
+          className="form-group pform pt-4 pr-4"
+          style={{ display: "none" }}
+        >
+          <label>Company name: </label>
+>>>>>>> become-vendor
           <input
             className="form-control"
             name="company_name"
@@ -74,7 +100,7 @@ export default class ProfileForm extends Component {
             onChange={this.handleChange}
             value={companyName}
           ></input>
-          <label>Specialty</label>
+          <label className="pt-2">Specialty</label>
           <select
             className="form-control"
             name="specialty"
@@ -88,7 +114,7 @@ export default class ProfileForm extends Component {
             </option>
             <option value="Pastries">Pastries</option>
           </select>
-          <label>Location</label>
+          <label className="pt-2">Location</label>
           <select
             className="form-control"
             name="location"
@@ -98,7 +124,7 @@ export default class ProfileForm extends Component {
             <option value="volvo">Kano</option>
             {showStates}
           </select>
-          <label>Elevator Pitch</label>
+          <label className="pt-2">Elevator Pitch</label>
           <input
             className="form-control"
             required
@@ -107,11 +133,29 @@ export default class ProfileForm extends Component {
             value={pitch}
           
           ></input>
-          <label>Upload Company Logo(Optional)</label>
-          <button id="upload_widget" className="cloudinary-button" 
-          onClick={()=>this.uploadWidget(myWidget)}>Crop and upload</button> <br></br>
-          <button onClick={this.createProfile}>Save</button>
-          <button onClick={this.toggleForm}> Cancel </button>
+          <div className="pt-2">
+            <label className="font-semibold mt-2">
+              Upload your company logo (optional)
+            </label>
+          </div>
+          <button
+            id="upload_widget"
+            className="cloudinary-button"
+            onClick={() => this.uploadWidget(myWidget)}
+          >
+            Click to upload
+          </button>{" "}
+          <br></br>
+          <button onClick={this.createProfile} className="mt-4">
+            <span className="mr-2 pt-2 pb-2 pl-4 pr-4 rounded-lg bg-teal-700 font-medium  text-white text-semibold ">
+              Save
+            </span>
+          </button>
+          <button onClick={this.toggleForm}>
+            <span className="mr-2 pt-2 pb-2 pl-4 pr-4 rounded-lg bg-white text-red-400 font-medium">
+              Cancel
+            </span>{" "}
+          </button>
         </form>
       </div>
     );
