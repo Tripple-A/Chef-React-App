@@ -53,7 +53,7 @@ export default class ProfileForm extends Component {
     const { companyName, location, specialty, pitch } = this.state;
     let myWidget = window.cloudinary.createUploadWidget({
       cloudName: 'da3ukbr9v', 
-      uploadPreset: 'urcvogho'}, (error, result) => { 
+      uploadPreset: 'ocyrrq39'}, (error, result) => { 
         if (!error && result && result.event === "success") { 
           const  url = result.info.secure_url
           console.log(url);
@@ -64,7 +64,7 @@ export default class ProfileForm extends Component {
     return (
       <div>
         <button onClick={this.toggleForm}>Profile Form</button>{" "}
-        <button>Upload Images</button>
+    
         <form className="form-group pform" style={{ display: "none" }}>
           <label style={{ color: "red" }}>CompanyName</label>
           <input
@@ -105,6 +105,7 @@ export default class ProfileForm extends Component {
             name="pitch"
             onChange={this.handleChange}
             value={pitch}
+          
           ></input>
           <label>Upload Company Logo(Optional)</label>
           <button id="upload_widget" className="cloudinary-button" 
