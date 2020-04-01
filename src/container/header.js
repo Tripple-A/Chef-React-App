@@ -17,9 +17,8 @@ const mapDispatchToProps = dispatch => ({
 
 const Header = ({ logged_in, logoutUser, user }) => {
   const retire = () => {
-    services.logout().then(response => {
-      if (response.data.logged_out) logoutUser();
-    });
+    logoutUser()
+    services.logout()
   };
 
   const profile = `/vendor/${user.id}`;
