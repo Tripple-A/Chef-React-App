@@ -51,22 +51,11 @@ export default class ProfileForm extends Component {
       </option>
     ));
     const { companyName, location, specialty, pitch } = this.state;
-<<<<<<< HEAD
     let myWidget = window.cloudinary.createUploadWidget({
       cloudName: 'da3ukbr9v', 
       uploadPreset: 'ocyrrq39'}, (error, result) => { 
         if (!error && result && result.event === "success") { 
           const  url = result.info.secure_url
-=======
-    let myWidget = window.cloudinary.createUploadWidget(
-      {
-        cloudName: "da3ukbr9v",
-        uploadPreset: "urcvogho"
-      },
-      (error, result) => {
-        if (!error && result && result.event === "success") {
-          const url = result.info.secure_url;
->>>>>>> become-vendor
           console.log(url);
           this.setState({ logo: url });
         } else {
@@ -76,12 +65,6 @@ export default class ProfileForm extends Component {
     );
     return (
       <div>
-<<<<<<< HEAD
-        <button onClick={this.toggleForm}>Profile Form</button>{" "}
-    
-        <form className="form-group pform" style={{ display: "none" }}>
-          <label style={{ color: "red" }}>CompanyName</label>
-=======
         <button onClick={this.toggleForm}>
           <span className="bg-gray-200 rounded-full px-3 py-1 text-xl font-semibold text-gray-700 mr-2">
             Profile Form
@@ -92,7 +75,6 @@ export default class ProfileForm extends Component {
           style={{ display: "none" }}
         >
           <label>Company name: </label>
->>>>>>> become-vendor
           <input
             className="form-control"
             name="company_name"
