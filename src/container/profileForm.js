@@ -51,11 +51,14 @@ export default class ProfileForm extends Component {
       </option>
     ));
     const { companyName, location, specialty, pitch } = this.state;
-    let myWidget = window.cloudinary.createUploadWidget({
-      cloudName: 'da3ukbr9v', 
-      uploadPreset: 'ocyrrq39'}, (error, result) => { 
-        if (!error && result && result.event === "success") { 
-          const  url = result.info.secure_url
+    let myWidget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: "da3ukbr9v",
+        uploadPreset: "ocyrrq39"
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          const url = result.info.secure_url;
           console.log(url);
           this.setState({ logo: url });
         } else {
@@ -66,7 +69,7 @@ export default class ProfileForm extends Component {
     return (
       <div>
         <button onClick={this.toggleForm}>
-          <span className="bg-gray-200 rounded-full px-3 py-1 text-xl font-semibold text-gray-700 mr-2">
+          <span className="bg-gray-200 rounded-full px-4 py-1 text-xl font-medium text-gray-700 mr-2">
             Profile Form
           </span>
         </button>{" "}
@@ -113,7 +116,6 @@ export default class ProfileForm extends Component {
             name="pitch"
             onChange={this.handleChange}
             value={pitch}
-          
           ></input>
           <div className="pt-2">
             <label className="font-semibold mt-2">
