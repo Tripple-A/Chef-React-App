@@ -38,6 +38,14 @@ export const Listvendors = () => {
             <strong>specialty:</strong> <span>{vendor.specialty}</span>
           </p>
           <p className="ml-3 font-medium">{vendor.pitch}</p>
+          <Link
+            to="/"
+            className="hover:no-underline text-white font-semibold bottom-0"
+          >
+            <p className="bg-dark-skin rounded-md px-3 py-2 w-48 bottom-0">
+              book this vendor
+            </p>
+          </Link>
         </div>
       </Link>
     </div>
@@ -46,7 +54,7 @@ export const Listvendors = () => {
     <div className="pt-10 max-w-screen-lg m-auto">
       <h1 className="text-center text-dark-skin text-5xl">Vendors</h1>
       <div className=" grid md:grid-cols-2 lg:grid-cols-3 m-10 sm:ml-20 lg:ml-10">
-        {displayVendors}s
+        {displayVendors}
       </div>
     </div>
   );
