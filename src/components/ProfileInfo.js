@@ -74,8 +74,14 @@ export const ProfileInfo = ({
         <h2 className="text-2xl md:text-4xl text-center mt-4 mb-2 bg-dark-skin px-4 py-4 rounded-lg text-white">
           Your uploaded images
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 row-gap-12 mt-2 bg-white py-4 shadow-lg">
-          {displayImages}
+        <div>
+          {images.length === 0 ? (
+            <div className="text-center py-4">You have no images uploaded</div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 row-gap-12 mt-2 bg-white py-4 shadow-lg">
+              {displayImages}
+            </div>
+          )}
         </div>
       </div>
     </div>
