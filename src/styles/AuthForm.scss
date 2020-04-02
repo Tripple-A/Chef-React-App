@@ -20,6 +20,9 @@
 .authImg {
   background-color: #fdffef;
   padding-bottom: 2em;
+  @media (min-width: 1400px) and (max-width: 1800px) {
+    padding-top: 10%;
+  }
 }
 
 .hot {
