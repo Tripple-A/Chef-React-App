@@ -42,7 +42,7 @@ This is a react app to help people in need of cooked meals find food vendors aro
 
 <!-- LIVE PREVIEW -->
 ## LIVE PREVIEW
-Find the live version [here](https://condescending-shirley-958d67.netlify.com/).
+Find the live version [here](https://foodies-stop.netlify.com/).
 A screenshot of how it looks shall be added in due course.
 ![Image](/src/proof.png)
 
