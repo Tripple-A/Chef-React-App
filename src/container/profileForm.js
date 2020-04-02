@@ -74,7 +74,7 @@ export default class ProfileForm extends Component {
           </span>
         </button>{" "}
         <form
-          className="form-group pform pt-4 pr-4"
+          className="form-group pform pt-4 pr-4 text-white"
           style={{ display: "none" }}
         >
           <label>Company name: </label>
