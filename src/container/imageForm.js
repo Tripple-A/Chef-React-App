@@ -56,8 +56,8 @@ const ImageForm = ({ user_id }) => {
   return (
     <div>
       <button onClick={e => hideForm(e)}>
-        <span className="bg-gray-200 rounded-full px-3 py-1 text-xl font-medium text-gray-700 mr-2">
-          Upload Images
+        <span className="bg-gray-200 rounded-full px-3 py-1 md:text-xl font-medium text-gray-700 mr-2">
+          click to upload event images
         </span>
       </button>
       <form className="imgForm" style={{ display: "none" }}>
@@ -66,18 +66,30 @@ const ImageForm = ({ user_id }) => {
         <input
           type="text"
           value={title}
+          placeholder="enter a title for this image"
           onChange={e => handleChange(e)}
           className="form-control"
         ></input>
         <button
           id="upload_widget"
-          className="cloudinary-button"
+          className="cloudinary-button mt-2"
           onClick={e => uploadWidget(myWidget, e)}
         >
           upload
         </button>
-        <button onClick={e => saveImage(e)}>Save</button>
-        <button onClick={e => hideForm(e)}>Cancel</button>
+        {/* <button onClick={e => saveImage(e)}>Save</button> */}
+        {/* <button onClick={e => hideForm(e)}>Cancel</button> */}
+
+        <button onClick={e => saveImage(e)} className="mt-4">
+          <span className="mr-2 pl-4 pr-4 py-3 rounded-lg bg-blue-700 font-medium  text-white text-semibold ml-2">
+            Save
+          </span>
+        </button>
+        <button onClick={e => hideForm(e)}>
+          <span className="mr-2 py-3 pl-4 pr-4 rounded-lg bg-white text-red-400 font-medium">
+            Cancel
+          </span>{" "}
+        </button>
       </form>
     </div>
   );

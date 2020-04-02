@@ -69,8 +69,8 @@ export default class ProfileForm extends Component {
     return (
       <div>
         <button onClick={this.toggleForm}>
-          <span className="bg-gray-200 rounded-full px-4 py-1 text-xl font-medium text-gray-700 mr-2">
-            Profile Form
+          <span className="bg-gray-200 rounded-full px-3 py-1 md:text-xl font-medium text-gray-700 mr-2">
+            click to fill your profile form
           </span>
         </button>{" "}
         <form

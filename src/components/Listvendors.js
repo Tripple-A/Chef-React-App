@@ -22,8 +22,8 @@ export const Listvendors = () => {
     >
       <Link to={`/${vendor.id}`} className="hover:no-underline text-dark">
         <img
-          className="w-full"
-          src="https://tailwindcss.com/img/card-top.jpg"
+          className="w-full object-cover"
+          src={vendor.logo}
           alt="Sunset in the mountains"
         ></img>
         <div className="px-6 py-4 ">
