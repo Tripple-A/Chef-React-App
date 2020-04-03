@@ -1,4 +1,4 @@
-const loggedIn = (state = false, action) => {
+const loggedIn = (state = true, action) => {
   switch (action.type) {
     case "LOG IN":
       return true;
