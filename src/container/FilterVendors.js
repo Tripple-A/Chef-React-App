@@ -47,6 +47,7 @@ export const FilterVendors = () => {
             <option>Native Dishes</option>
             <option>Pastries</option>
           </select>
+          <div className="text-center mt-2">filter by specialty</div>
         </div>
       </form>
       <div className="pt-10 max-w-screen-lg m-auto min-h-screen">
