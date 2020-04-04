@@ -81,12 +81,12 @@ const ImageForm = ({ user_id }) => {
         {/* <button onClick={e => hideForm(e)}>Cancel</button> */}
 
         <button onClick={e => saveImage(e)} className="mt-4">
-          <span className="mr-2 pl-4 pr-4 py-3 rounded-lg bg-blue-700 font-medium  text-white text-semibold ml-2">
+          <span className="mr-2 pl-3 pr-3 py-3 rounded-lg bg-blue-700 font-medium  text-sm text-white text-semibold ml-2">
             Save
           </span>
         </button>
         <button onClick={e => hideForm(e)}>
-          <span className="mr-2 py-3 pl-4 pr-4 rounded-lg bg-white text-red-400 font-medium">
+          <span className="mr-2 py-3 pl-3 pr-3 rounded-lg text-sm bg-white text-red-400 font-medium">
             Cancel
           </span>{" "}
         </button>
