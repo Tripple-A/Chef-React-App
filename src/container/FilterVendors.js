@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../styles/FilterVendors.scss";
 import services from "../services/services";
-// import states from "../helpers/statesInNigeria";
 import { Listvendors } from "../components/Listvendors";
 
 export const FilterVendors = () => {
-  // const [vendorLoc, setVendorLoc] = useState("");
   const [vendors, setVendors] = useState([]);
   const [specialty, setSpecialty] = useState("");
   const [filterList, setFilterList] = useState([]);
@@ -31,25 +29,6 @@ export const FilterVendors = () => {
     }
   }, [specialty, vendors]);
 
-  // const statesInNigeria = states.map((state, index) => (
-  //   <option key={index}>{state}</option>
-  // ));
-
-  // const handleLocationChange = location => {
-  //   setVendorLoc(location);
-
-  //   if (vendorLoc !== "") {
-  //     const displayFilter = vendors.filter(vendor =>
-  //       vendor.location.toLowerCase().includes(vendorLoc.toLowerCase())
-  //     );
-  //     setFilterList(displayFilter);
-  //     console.log(filterList);
-  //   } else {
-  //     setFilterList(vendors);
-  //     console.log(filterList);
-  //   }
-  // };
-
   const handleSpecialtyChange = ({ target }) => {
     setSpecialty(target.value);
   };
@@ -58,13 +37,6 @@ export const FilterVendors = () => {
     <div className="md:ml-20 md:mr-12 min-h-screen">
       <form className="max-w-screen-lg m-auto ">
         <div className="mobile-flex flex lg:justify-between ml-4 mr-4">
-          {/*  <select
-            value={vendorLoc}
-            onChange={e => handleLocationChange(e.target.value)}
-            className="form-control w-6/12 lg:w-2/5 mt-4"
-          >
-            {statesInNigeria}
-          </select> */}
           <div className="text-center">or</div>
           <select
             className="form-control w-6/12 lg:w-2/5 mt-2"
