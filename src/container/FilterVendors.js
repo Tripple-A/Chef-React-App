@@ -37,7 +37,6 @@ export const FilterVendors = () => {
     <div className="md:ml-20 md:mr-12 min-h-screen">
       <form className="max-w-screen-lg m-auto ">
         <div className="mobile-flex flex lg:justify-between ml-4 mr-4">
-          <div className="text-center">or</div>
           <select
             className="form-control w-6/12 lg:w-2/5 mt-2"
             value={specialty}
