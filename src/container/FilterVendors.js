@@ -38,7 +38,7 @@ export const FilterVendors = () => {
       <form className="max-w-screen-lg m-auto ">
         <div className="mobile-flex flex lg:justify-between ml-4 mr-4">
           <select
-            className="form-control w-6/12 lg:w-2/5 mt-2"
+            className="form-control w-6/12 lg:w-2/5 mt-4"
             value={specialty}
             onChange={handleSpecialtyChange}
           >
@@ -47,10 +47,10 @@ export const FilterVendors = () => {
             <option>Native Dishes</option>
             <option>Pastries</option>
           </select>
-          <div className="text-center mt-2">filter by specialty</div>
+          <div className="text-center mt-2">filter vendors by specialty</div>
         </div>
       </form>
-      <div className="pt-10 max-w-screen-lg m-auto min-h-screen">
+      <div className="pt-2 max-w-screen-lg m-auto min-h-screen">
         <h1 className="text-center text-dark-skin text-5xl">Vendors</h1>
         <Listvendors
           vendorsToDisplay={filterList.length > 0 ? filterList : vendors}

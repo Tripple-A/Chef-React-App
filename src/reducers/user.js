@@ -1,4 +1,4 @@
-const user = (state = { id: 1, vendor: true }, action) => {
+const user = (state = {}, action) => {
   switch (action.type) {
     case "ASSIGN USER":
       return action.user;
