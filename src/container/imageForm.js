@@ -46,10 +46,10 @@ const ImageForm = ({ user_id }) => {
     (error, result) => {
       if (!error && result && result.event === "success") {
         const url = result.info.secure_url;
-        console.log(url);
+        // console.log(url);
         setUrl(url);
       } else {
-        console.log(error);
+        // console.log(error);
       }
     }
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Spinner } from "../helpers/svgs";
 import { uuid } from "uuidv4";
 
 export const ProfileInfo = ({
@@ -10,8 +11,9 @@ export const ProfileInfo = ({
   isLoaded
 }) => {
   let displayImages = [];
+  let noImages = "";
   const isImageLoaded = () => {
-    if (isLoaded) {
+    if (isLoaded && images.length > 0) {
       displayImages = images.map(p => (
         <div key={uuid()} className="px-4">
           <a href={p.url} className="hover:no-underline">
@@ -29,6 +31,15 @@ export const ProfileInfo = ({
           </a>
         </div>
       ));
+    } else if (isLoaded && !images) {
+      noImages = (
+        <div
+          className="text-center px-10 font-semibold bg-gray-200 py-4 shadow-md
+        "
+        >
+          You currently do not have any uploaded images.
+        </div>
+      );
     }
   };
 
@@ -75,13 +86,20 @@ export const ProfileInfo = ({
           Your uploaded images
         </h2>
         <div>
-          {images.length === 0 ? (
-            <div className="text-center py-4">You have no images uploaded</div>
+          {!isLoaded ? (
+            <div className="text-center m-auto py-4">
+              <Spinner strokeColor="red" />
+            </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 row-gap-12 mt-2 bg-white py-4 shadow-lg">
+            <div
+              className={`grid md:grid-cols-2 lg:grid-cols-3 gap-4 row-gap-12 mt-2 bg-white py-4 shadow-lg ${
+                displayImages.length < 1 ? "hidden" : "block"
+              }`}
+            >
               {displayImages}
             </div>
           )}
+          <div>{noImages}</div>
         </div>
       </div>
     </div>
