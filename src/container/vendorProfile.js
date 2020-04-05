@@ -28,7 +28,7 @@ const VendorProfile = ({ match }) => {
   return (
     <div className="pt-10 bg-light-skin pb-20 profileFormContainer">
       <div className="mt-20 pformWrapper">
-        <div className="md:max-w-lg lg:max-w-3xl m-auto bg-dark-skin pt-6 pb-6 pl-4 pr-2 rounded-lg ">
+        <div className="md:max-w-lg lg:max-w-3xl m-auto bg-dark-skin pt-6 pb-6 pl-4 pr-2 rounded-lg">
           <h3 className="text-white">Hi, {name} </h3>
           <p className="text-left text-white">
             In order to show up-to-date products to customers, please constantly
@@ -36,9 +36,10 @@ const VendorProfile = ({ match }) => {
           </p>
 
           <ProfileForm user_id={id} />
-          <div className="mt-4">
-            <ImageForm user_id={id} />
-          </div>
+        </div>
+        <div className="py-4 px-3 sm:px-4 md:max-w-lg lg:max-w-3xl m-auto bg-orange-300 rounded-lg">
+          <p>Upload images from your past events.</p>
+          <ImageForm user_id={id} />
         </div>
         <div className="md:max-w-lg lg:max-w-3xl m-auto">
           <ProfileInfo
