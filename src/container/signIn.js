@@ -68,7 +68,7 @@ class SignIn extends Component {
         }
       })
       .catch(error =>
-        this.setState({ errors: "There was an issue signing you up." })
+        this.setState({ errors: "There was an issue, please try again by filling all fields correctly." })
       );
   };
 

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
+import { Redirect } from "react-router-dom";
 import "../styles/Dashboard.scss";
-import { apiUrl } from "../helpers/helperFns";
 import { connect } from "react-redux";
 import { FilterVendors } from "./FilterVendors";
 
@@ -11,36 +10,13 @@ const mapStateToProps = state => ({
 });
 
 class Dashboard extends Component {
-  state = {
-    chefs: [],
-    image: []
-  };
-  async componentDidMount() {
-    await axios.get(`${apiUrl}/chefs`).then(res => {
-      if (res.data.status === 200) {
-        this.setState({ chefs: res.data.chefs });
-        // console.log("yes!!");
-      }
-    });
-  }
-
-  fileSelect = picture => {
-    this.setState({ image: picture[0] });
-  };
-  uploadPic = () => {
-    console.log(this.state.image);
-    const fd = new FormData();
-    fd.append("image", this.state.image);
-    fd.append("id", this.props.user.id);
-    axios
-      .post(`${apiUrl}/add`, fd)
-      .then(res => this.setState({ src: res.data.src }));
-  };
 
   render() {
-    const { user } = this.props;
+    const { user, logged_in } = this.props;
+    const showDashboard = logged_in? '' : <Redirect to="/" />
     return (
       <div className="bg-light-skin min-h-screen">
+        <div>{showDashboard}</div>
         <div className="md:flex md:justify-between md:ml-20 md:mr-6 max-w-screen-lg m-auto dashboard-grid">
           <div className="md:ml-20 text-dark-skin dashboard-text">
             <h2 className="sm:text-2xl md:text-5xl md:block md:mt-20 dash">
