@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 
 export default class ProfileForm extends Component {
@@ -7,8 +8,13 @@ export default class ProfileForm extends Component {
     location: "",
     specialty: "",
     pitch: "",
-    logo: ""
+    logo: "",
+    change: false
   };
+
+  componentDidMount = () => {
+    this.setState({change:false})
+  }
 
   uploadWidget = widget => {
     widget.open();
@@ -27,6 +33,7 @@ export default class ProfileForm extends Component {
   createProfile = e => {
     e.preventDefault();
     const { company_name, location, specialty, pitch, logo } = this.state;
+    console.log(this.state)
     axios
       .post(
         "https://foodie-apiv1.herokuapp.com/profiles",
@@ -40,10 +47,11 @@ export default class ProfileForm extends Component {
         },
         { withCredentials: true }
       )
-      .then(res => console.log(res))
+      .then(res => {this.toggleForm(e); this.setState({change:true})})
       .catch(e => console.log(e.response));
   };
   render() {
+    const show = this.state.change ? <Redirect to="/dashboard" /> : "";
     const states = ["Abia", "Adamawa", "Lagos", "POrt-Harcourt"];
     const showStates = states.map(state => (
       <option value={state} key={state}>
@@ -68,6 +76,7 @@ export default class ProfileForm extends Component {
     );
     return (
       <div>
+        <div>{show}</div>
         <button onClick={this.toggleForm}>
           <span className="bg-gray-200 rounded-full px-3 py-1 md:text-xl font-medium text-gray-700 mr-2">
             click to fill your profile form
@@ -106,7 +115,7 @@ export default class ProfileForm extends Component {
             onChange={this.handleChange}
             value={location}
           >
-            <option value="volvo">Kano</option>
+            <option value="Kano">Kano</option>
             {showStates}
           </select>
           <label className="pt-2">Elevator Pitch</label>
