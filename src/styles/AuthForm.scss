@@ -11,16 +11,23 @@
   @media screen and (min-device-width: 480px) and (max-device-width: 768px) {
     grid-template-columns: 45% 55%;
   }
+
+  @media (min-width: 1400px) and (max-width: 1440px) {
+    padding-top: 5%;
+  }
 }
 
 .authImg {
   background-color: #fdffef;
   padding-bottom: 2em;
+  @media (min-width: 1400px) and (max-width: 1800px) {
+    padding-top: 10%;
+  }
 }
 
 .hot {
   text-align: center;
-  margin-top: 8%;
+  margin-top: 4%;
   h3 {
     font-weight: 600;
     margin-bottom: 0;

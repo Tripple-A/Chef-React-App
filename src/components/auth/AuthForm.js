@@ -98,13 +98,13 @@ export const AuthForm = ({
           <div className="switchAuth">
             {type === "signup" ? (
               <div>
-                <p>
+                <p className="text-left">
                   Already Signed up? <Link to="/">Log in</Link>.{" "}
                 </p>
               </div>
             ) : (
               <div>
-                <p className="switch">
+                <p className="text-left">
                   Don't have an account? <Link to="/signup">Sign up</Link>
                 </p>
               </div>

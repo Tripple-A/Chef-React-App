@@ -7,7 +7,7 @@ import SignIn from "./container/signIn";
 import Dashboard from "./container/dashboard";
 import Header from "./container/header";
 import NewVendor from "./components/newVendor";
-import VendorProfile from "./components/vendorProfile";
+import VendorProfile from "./container/vendorProfile";
 class App extends Component {
   render() {
     return (

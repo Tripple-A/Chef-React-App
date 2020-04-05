@@ -403,3 +403,21 @@ export const Blob = () => {
     </div>
   );
 };
+
+export const Spinner = ({ strokeColor }) => {
+  return (
+    <div>
+      <svg className="spinner" viewBox="0 0 50 50">
+        <circle
+          className="path"
+          stroke={strokeColor}
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
+          strokeWidth="5"
+        ></circle>
+      </svg>
+    </div>
+  );
+};
