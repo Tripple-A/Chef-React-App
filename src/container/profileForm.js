@@ -67,10 +67,10 @@ export default class ProfileForm extends Component {
       (error, result) => {
         if (!error && result && result.event === "success") {
           const url = result.info.secure_url;
-          console.log(url);
+          // console.log(url);
           this.setState({ logo: url });
         } else {
-          console.log(error);
+          // console.log(error);
         }
       }
     );

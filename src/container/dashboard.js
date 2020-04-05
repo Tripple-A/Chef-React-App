@@ -4,7 +4,6 @@ import "../styles/Dashboard.scss";
 import { apiUrl } from "../helpers/helperFns";
 import { connect } from "react-redux";
 import { FilterVendors } from "./FilterVendors";
-import { Listvendors } from "../components/Listvendors";
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -20,7 +19,7 @@ class Dashboard extends Component {
     await axios.get(`${apiUrl}/chefs`).then(res => {
       if (res.data.status === 200) {
         this.setState({ chefs: res.data.chefs });
-        console.log("yes!!");
+        // console.log("yes!!");
       }
     });
   }
@@ -61,7 +60,6 @@ class Dashboard extends Component {
           </div>
         </div>
         <FilterVendors />
-        <Listvendors />
       </div>
     );
   }

@@ -50,7 +50,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
   }
 
   return (
-    <div className="menuWrapper fixed bg-light-skin">
+    <div className="menuWrapper fixed bg-light-skin z-10 ">
       <div
         className={`logo ${logged_in ? "sm:ml-20" : ""} ${
           !logged_in ? "ml-10" : ""
