@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { uuid } from "uuidv4";
 
 export const Listvendors = ({ vendorsToDisplay, isSearchEmpty }) => {
@@ -30,6 +31,7 @@ export const Listvendors = ({ vendorsToDisplay, isSearchEmpty }) => {
       </div>
       <div className="bg-dark-skin rounded-md px-3 py-2 w-48 ml-10 flex">
         <div>
+          <Link to={`/viewvendor/${vendor.id}`} > view vendor</Link>
           <a
             target="_blank"
             rel="noopener noreferrer"

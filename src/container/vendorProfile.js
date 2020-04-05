@@ -24,7 +24,6 @@ const VendorProfile = ({ match }) => {
     fetchData();
   }, [id]);
   const name = profile.company_name ? profile.company_name : "New Vendor";
-  const src = profile.logo ? profile.logo : "#";
   return (
     <div className="pt-10 bg-light-skin pb-20 profileFormContainer">
       <div className="mt-20 pformWrapper">
