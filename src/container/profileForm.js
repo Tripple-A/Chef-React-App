@@ -13,8 +13,8 @@ export default class ProfileForm extends Component {
   };
 
   componentDidMount = () => {
-    this.setState({change:false})
-  }
+    this.setState({ change: false });
+  };
 
   uploadWidget = widget => {
     widget.open();
@@ -33,7 +33,7 @@ export default class ProfileForm extends Component {
   createProfile = e => {
     e.preventDefault();
     const { company_name, location, specialty, pitch, logo } = this.state;
-    console.log(this.state)
+    console.log(this.state);
     axios
       .post(
         "https://foodie-apiv1.herokuapp.com/profiles",
@@ -47,7 +47,10 @@ export default class ProfileForm extends Component {
         },
         { withCredentials: true }
       )
-      .then(res => {this.toggleForm(e); this.setState({change:true})})
+      .then(res => {
+        this.toggleForm(e);
+        this.setState({ change: true });
+      })
       .catch(e => console.log(e.response));
   };
   render() {
@@ -78,8 +81,8 @@ export default class ProfileForm extends Component {
       <div>
         <div>{show}</div>
         <button onClick={this.toggleForm}>
-          <span className="bg-gray-200 rounded-full px-3 py-1 md:text-xl font-medium text-gray-700 mr-2">
-            click to fill or update your profile form
+          <span className="bg-gray-200 rounded-full px-2 py-1 md:text-xl font-medium text-gray-700 sm:mr-2">
+            fill or update your profile form
           </span>
         </button>{" "}
         <form

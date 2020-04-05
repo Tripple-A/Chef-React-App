@@ -72,7 +72,9 @@ export const AuthForm = ({
                 value={password}
                 placeholder="any combination of letters."
               />
-              <Eye />{" "}
+              <div>
+                <Eye />{" "}
+              </div>
             </div>
           </div>
           <div className="submit">

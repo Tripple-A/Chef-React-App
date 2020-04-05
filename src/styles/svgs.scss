@@ -27,15 +27,16 @@
 }
 
 .eye {
-  margin-left: -5%;
+  position: absolute;
+  margin-left: -2%;
+  margin-top: -1%;
   width: calc(25px - 20%);
   cursor: pointer;
 }
 .logoSvg {
   background-color: #fdffef;
 
-  @media screen and (max-device-width: 480px) {
-    width: 10px;
+  @media screen and (max-width: 480px) {
   }
 }
 

@@ -83,7 +83,7 @@ export const ProfileInfo = ({
       </div>
       <div className="">
         <h2 className="text-2xl md:text-4xl text-center mt-4 mb-2 bg-dark-skin px-4 py-4 rounded-lg text-white">
-          Your uploaded images
+          {isLoaded ? `${vendorName} images` : ""}
         </h2>
         <div>
           {!isLoaded ? (
