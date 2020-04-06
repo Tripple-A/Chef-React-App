@@ -1,12 +1,29 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { connect } from "react-redux";
 import { apiUrl } from "../helpers/helperFns";
 import { ProfileInfo } from "../components/ProfileInfo";
 
-const ViewVendor = ({ match }) => {
+
+const mapSTateToProps = state => ({
+  user: state.user
+})
+
+const ViewVendor = ({ match, user }) => {
   const [profile, setProfile] = useState({});
   const [images, setImages] = useState([]);
   const [isLoaded, setIsLoaded] = useState();
-  const id = match.params.vendor_id;
+  const id = parseInt(match.params.vendor_id);
+
+  const saveAven = () => {
+    axios.post(`${apiUrl}savings`, {
+      potential_customer_id: user.id,
+      potential_vendor_id: id
+    })
+    .then(resp => console.log(resp))
+    .catch(error => console.log(error.message))
+  }
+
   useEffect(() => {
     async function fetchData() {
       await fetch(`${apiUrl}profiles/vendor-${id}`)
@@ -38,6 +55,15 @@ const ViewVendor = ({ match }) => {
               className="hover:no-underline text-black font-semibold relative"
             >
               book this vendor
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://wa.me/14155238886"
+              className="hover:no-underline text-black font-semibold relative"
+              onClick={() => saveAven()}
+            >
+              Save this vendor
             </a>
           </div>
 
@@ -72,4 +98,4 @@ const ViewVendor = ({ match }) => {
   );
 };
 
-export default ViewVendor;
+export default connect(mapSTateToProps,null)(ViewVendor);

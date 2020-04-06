@@ -9,6 +9,7 @@ import Header from "./container/header";
 import NewVendor from "./components/newVendor";
 import VendorProfile from "./container/vendorProfile";
 import ViewVendor from "./components/viewVendor";
+import SavedVendor from "./components/savedVendor"
 
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
             exact
             component={ViewVendor}
           ></Route>
+          <Route path="/savedvendors/:user_id" exact strict component={SavedVendor}></Route>
         </Switch>
       </BrowserRouter>
     );
