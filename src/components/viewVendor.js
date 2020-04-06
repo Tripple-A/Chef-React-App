@@ -22,11 +22,11 @@ const ViewVendor = ({ match }) => {
   return (
     <div className="bg-light-skin min-h-full pt-10 m-auto profileFormContainer ">
       <div className="pt-8 pformWrapper ">
-        <div className="bg-dark-skin px-6 py-3 sm:max-w-lg m-auto rounded-lg text-center">
+        <div className="bg-dark-skin px-6 py-3 sm:max-w-lg lg:max-w-2xl m-auto rounded-lg text-center">
           <h1 className="text-white font-semibold">{profile.company_name} </h1>
         </div>
         <div
-          className={`bg-orange-200 flex py-2 justify-center sm:max-w-lg m-auto ${
+          className={`bg-orange-200 flex py-2 justify-center sm:max-w-lg lg:max-w-2xl m-auto ${
             isLoaded ? "block" : "hidden"
           }`}
         >
@@ -57,7 +57,7 @@ const ViewVendor = ({ match }) => {
             </a>{" "}
           </div>
         </div>
-        <div className="sm:max-w-lg m-auto">
+        <div className="sm:max-w-lg lg:max-w-2xl m-auto">
           <ProfileInfo
             vendorName={profile.company_name}
             specialty={profile.specialty}
