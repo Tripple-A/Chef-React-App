@@ -120,6 +120,7 @@ const Header = ({ logged_in, logoutUser, user }) => {
               className={` ${
                 !logged_in ? "invisible" : ""
               } text-dark-skin hover:no-underline text-xl`}
+              to={`/savedvendors/${user.id}`}
             >
               Saved vendors
             </Link>
