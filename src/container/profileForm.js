@@ -9,6 +9,7 @@ export default class ProfileForm extends Component {
     specialty: "",
     pitch: "",
     logo: "",
+    phone_number: "",
     change: false
   };
 
@@ -32,7 +33,7 @@ export default class ProfileForm extends Component {
   };
   createProfile = e => {
     e.preventDefault();
-    const { company_name, location, specialty, pitch, logo } = this.state;
+    const { company_name, location, specialty, pitch, logo,phone_number } = this.state;
     console.log(this.state);
     axios
       .post(
@@ -43,6 +44,7 @@ export default class ProfileForm extends Component {
           specialty,
           pitch,
           logo,
+          phone_number,
           user_id: this.props.user_id
         },
         { withCredentials: true }
