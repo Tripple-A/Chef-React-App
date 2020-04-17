@@ -79,7 +79,7 @@ export const AuthForm = ({
           </div>
           <div className="submit">
             <button type="submit" className="submitAuth">
-              {authHeader}
+              {authenticating ? "" : authHeader}
               {authenticating ? (
                 <svg className="spinner" viewBox="0 0 50 50">
                   <circle

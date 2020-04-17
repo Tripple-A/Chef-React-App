@@ -32,7 +32,14 @@ export default class ProfileForm extends Component {
   };
   createProfile = e => {
     e.preventDefault();
-    const { company_name, location, specialty, pitch, logo } = this.state;
+    const {
+      company_name,
+      location,
+      specialty,
+      pitch,
+      logo,
+      phone_number
+    } = this.state;
     console.log(this.state);
     axios
       .post(
@@ -43,6 +50,7 @@ export default class ProfileForm extends Component {
           specialty,
           pitch,
           logo,
+          phone_number,
           user_id: this.props.user_id
         },
         { withCredentials: true }
@@ -61,7 +69,13 @@ export default class ProfileForm extends Component {
         {state}
       </option>
     ));
-    const { companyName, location, specialty, pitch } = this.state;
+    const {
+      companyName,
+      location,
+      specialty,
+      pitch,
+      phone_number
+    } = this.state;
     let myWidget = window.cloudinary.createUploadWidget(
       {
         cloudName: "da3ukbr9v",
@@ -96,6 +110,14 @@ export default class ProfileForm extends Component {
             required
             onChange={this.handleChange}
             value={companyName}
+          ></input>
+          <label>Phone number: </label>
+          <input
+            className="form-control"
+            name="company_name"
+            required
+            onChange={this.handleChange}
+            value={phone_number}
           ></input>
           <label className="pt-2">Specialty</label>
           <select
