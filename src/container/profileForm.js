@@ -33,8 +33,14 @@ export default class ProfileForm extends Component {
   };
   createProfile = e => {
     e.preventDefault();
-    const { company_name, location, specialty, pitch, logo,phone_number } = this.state;
-    console.log(this.state);
+    const {
+      company_name,
+      location,
+      specialty,
+      pitch,
+      logo,
+      phone_number
+    } = this.state;
     axios
       .post(
         "https://foodie-apiv1.herokuapp.com/profiles",
@@ -63,7 +69,13 @@ export default class ProfileForm extends Component {
         {state}
       </option>
     ));
-    const { companyName, location, specialty, pitch } = this.state;
+    const {
+      companyName,
+      location,
+      specialty,
+      pitch,
+      phone_number
+    } = this.state;
     let myWidget = window.cloudinary.createUploadWidget(
       {
         cloudName: "da3ukbr9v",
@@ -72,10 +84,8 @@ export default class ProfileForm extends Component {
       (error, result) => {
         if (!error && result && result.event === "success") {
           const url = result.info.secure_url;
-          // console.log(url);
           this.setState({ logo: url });
         } else {
-          // console.log(error);
         }
       }
     );
@@ -98,6 +108,15 @@ export default class ProfileForm extends Component {
             required
             onChange={this.handleChange}
             value={companyName}
+          ></input>
+          <label>Phone number(WhatsApp): </label>
+          <input
+            className="form-control"
+            name="company_name"
+            required
+            onChange={this.handleChange}
+            value={phone_number}
+            placeholder="+234808...."
           ></input>
           <label className="pt-2">Specialty</label>
           <select
