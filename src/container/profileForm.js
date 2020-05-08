@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import states from "../helpers/statesInNigeria";
 
 export default class ProfileForm extends Component {
   state = {
@@ -63,7 +64,6 @@ export default class ProfileForm extends Component {
   };
   render() {
     const show = this.state.change ? <Redirect to="/dashboard" /> : "";
-    const states = ["Abia", "Adamawa", "Lagos", "POrt-Harcourt"];
     const showStates = states.map(state => (
       <option value={state} key={state}>
         {state}
@@ -93,7 +93,7 @@ export default class ProfileForm extends Component {
       <div>
         <div>{show}</div>
         <button onClick={this.toggleForm}>
-          <span className="bg-gray-200 rounded-full px-2 py-1 md:text-xl font-medium text-gray-700 sm:mr-2">
+          <span className="bg-gray-200 rounded-md px-3 py-1 md:text-base font-medium text-gray-700 sm:mr-2">
             fill or update your profile form
           </span>
         </button>{" "}
@@ -112,10 +112,10 @@ export default class ProfileForm extends Component {
           <label>Phone number(WhatsApp): </label>
           <input
             className="form-control"
-            name="company_name"
             required
             onChange={this.handleChange}
             value={phone_number}
+            name="phone_number"
             placeholder="+234808...."
           ></input>
           <label className="pt-2">Specialty</label>
@@ -139,7 +139,6 @@ export default class ProfileForm extends Component {
             onChange={this.handleChange}
             value={location}
           >
-            <option value="Kano">Kano</option>
             {showStates}
           </select>
           <label className="pt-2">Elevator Pitch</label>

@@ -61,14 +61,18 @@ class SignIn extends Component {
             this.setState({ authenticating: false });
           } else {
             this.setState({
-              errors: "email or Password is incorrect."
+              errors: "email or Password is incorrect.",
+              authenticating: false
             });
-            this.setState({ authenticating: false });
           }
         }
       })
       .catch(error =>
-        this.setState({ errors: "There was an issue, please try again by filling all fields correctly." })
+        this.setState({
+          errors:
+            "There was an issue, please try again by filling all fields correctly.",
+          authenticating: false
+        })
       );
   };
 
