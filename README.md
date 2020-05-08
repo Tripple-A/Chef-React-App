@@ -2,6 +2,8 @@
 
 This is a react app to help people in need of cooked meals for their events find food vendors around them . It is a constant struggle to have a variety of choices when it comes to good food,with this app,we bridge that gap.
 
+![screenshot](./screenshot.png)
+
 ## Table of Contents
 
 - [User Features](#user-features)
