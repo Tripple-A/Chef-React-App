@@ -100,9 +100,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 - 🇳🇬 Abiodun Ajibade - biodun9@gmail.com | [Github Account](https://github.com/Tripple-A) | [Twitter](https://twitter.com/AbiodunAjibade3) | [Linkedin](https://linkedin.com/in/abiodun-ajibade)
 
-* 🇳🇬 Adebola Adeniran - adebola.niran@gmail.com | [Github Account](https://github.com/onedebos) | [Twitter](https://twitter.com/debosthefirst) | [Linkedin](https://linkedin.com/in/adebola-niran)
-  <!-- ACKNOWLEDGEMENTS -->
-
 ## Acknowledgements
 
 - <a href="https://www.microverse.org/"> Microverse</a> and God Almighty .
