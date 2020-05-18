@@ -20,11 +20,11 @@ const signup = details => {
 };
 
 const getVendors = () => {
-  return axios.get(`${apiUrl}logged_in`);
+  return axios.get(`${apiUrl}logged_in`, { withCredentials: true });
 };
 
 const getProfiles = () => {
-  return axios.get(`${apiUrl}profiles`);
+  return axios.get(`${apiUrl}profiles`, { withCredentials: true });
 };
 export default {
   logout: logout,
