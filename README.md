@@ -1,7 +1,6 @@
 # Chef-React-App
 
 This is a react app to help people in need of cooked meals for their events find food vendors around them . It is a constant struggle to have a variety of choices when it comes to good food,with this app,we bridge that gap.
-
 ![screenshot](./screenshot.png)
 
 ## Table of Contents
@@ -102,8 +101,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 - 🇳🇬 Abiodun Ajibade - biodun9@gmail.com | [Github Account](https://github.com/Tripple-A) | [Twitter](https://twitter.com/AbiodunAjibade3) | [Linkedin](https://linkedin.com/in/abiodun-ajibade)
 
-* 🇳🇬 Adebola Adeniran - adebola.niran@gmail.com | [Github Account](https://github.com/onedebos) | [Twitter](https://twitter.com/debosthefirst) | [Linkedin](https://linkedin.com/in/adebola-niran)
-  <!-- ACKNOWLEDGEMENTS -->
+* 🇳🇬 Adebola Adeniran - adebola.niran@gmail.com | [Github Account](https://github.com/onedebos) | [Twitter](https://twitter.com/debosthefirst) | [Linkedin](https://linkedin.com/in/adebola-niran)  <!-- ACKNOWLEDGEMENTS -->
 
 ## Acknowledgements
 
