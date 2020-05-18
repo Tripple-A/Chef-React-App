@@ -6,31 +6,23 @@ const logout = () => {
 };
 
 const signin = details => {
-  return axios.post(`${apiUrl}sessions`, details, { withCredentials: true });
+  return axios.post(`${apiUrl}sessions`, details);
 };
 
 async function checkLoggedIn() {
-  return await axios.get(`${apiUrl}logged_in`, {
-    withCredentials: true
-  });
+  return await axios.get(`${apiUrl}logged_in`);
 }
 
 const signup = details => {
-  return axios.post(`${apiUrl}registrations`, details, {
-    withCredentials: true
-  });
+  return axios.post(`${apiUrl}registrations`, details);
 };
 
 const getVendors = () => {
-  return axios.get(`${apiUrl}logged_in`, {
-    withCredentials: true
-  });
+  return axios.get(`${apiUrl}logged_in`);
 };
 
 const getProfiles = () => {
-  return axios.get(`${apiUrl}profiles`, {
-    withCredentials: true
-  });
+  return axios.get(`${apiUrl}profiles`);
 };
 export default {
   logout: logout,
