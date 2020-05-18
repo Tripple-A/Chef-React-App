@@ -6,7 +6,7 @@ const logout = () => {
 };
 
 const signin = details => {
-  return axios.post(`${apiUrl}sessions`, details);
+  return axios.post(`${apiUrl}sessions`, details, { withCredentials: true });
 };
 
 async function checkLoggedIn() {
@@ -14,7 +14,9 @@ async function checkLoggedIn() {
 }
 
 const signup = details => {
-  return axios.post(`${apiUrl}registrations`, details);
+  return axios.post(`${apiUrl}registrations`, details, {
+    withCredentials: true
+  });
 };
 
 const getVendors = () => {
