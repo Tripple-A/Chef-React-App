@@ -98,7 +98,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-- 🇳🇬 Abiodun Ajibade - biodun9@gmail.com | [Github Account](https://github.com/Tripple-A) | [Twitter](https://twitter.com/AbiodunAjibade3) | [Linkedin](https://linkedin.com/in/abiodun-ajibade)
+- 🇳🇬 Abiodun Ajibade - biodun9@gmail.com | [Github Account](https://github.com/Tripple-A) | [Twitter](https://twitter.com/AbiodunAjibade3) | [Linkedin](https://linkedin.com/in/abiodun-ajibade) | [Portfolio](https://abiodun-ajibade.netlify.app/)
 
 ## Acknowledgements
 
