@@ -1,6 +1,6 @@
 # Chef-React-App
 
-This is a react app to help people in need of cooked meals for their events find food vendors around them . It is a constant struggle to have a variety of choices when it comes to good food,with this app,we bridge that gap.
+This is a react app to help people in need of cooked meals for their events find food vendors around them. It is a constant struggle to have a variety of choices when it comes to good food, with this app, we bridge that gap.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ This is a react app to help people in need of cooked meals for their events find
 ## User Features
 
 - A user has access to all vendors registered on the app.
-- A user upon sign-in can visit a particular vendor's page,view what is available and then,make a booking for his event upon vendor availability for that date.
+- A user upon sign-in can visit a particular vendor's page, view what is available and then, make a booking for his event upon vendor availability for that date.
 - Users can also become vendors upon sign-up after payment of a fee.
 - Users who are vendors can create their vendor profile and constantly upload meal-pictures to entice their customers.
 
@@ -41,14 +41,14 @@ This is a react app to help people in need of cooked meals for their events find
 - CSS3
 - Tailwind CSS
 - Bootstrap
-- JAVASCRIPT(ES6)
+- JavaScript
 - React
 - Redux
 - Rails (API)
 
 <!-- LIVE PREVIEW -->
 
-## LIVE PREVIEW
+## Live Preview
 
 Find the live version [here](https://foodies-stop.netlify.com/).
 A screenshot of how it looks shall be added in due course.
@@ -56,7 +56,7 @@ A screenshot of how it looks shall be added in due course.
 
 <!-- REQUIRED INSTALLATION -->
 
-## REQUIRED INSTALLATIONS
+## Required Installations
 
 - npm
 
