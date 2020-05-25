@@ -51,7 +51,7 @@ This is a React app to help people in need of cooked meals for their events find
 ## Live Preview
 
 Find the live version [here](https://foodies-stop.netlify.app/).
-A screenshot of how it looks shall be added in due course.
+Below is a screenshot of what it looks like.
 ![Image](/src/proof.png)
 
 <!-- REQUIRED INSTALLATION -->
