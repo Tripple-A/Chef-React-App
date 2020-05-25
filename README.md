@@ -64,7 +64,7 @@ A screenshot of how it looks shall be added in due course.
 
 ## Installation of This Repository
 
-Once you have installed the requiered packages shown on the [Required Installations](#required-installations), proceed with the following steps
+Once you have installed the required packages shown on the [Required Installations](#required-installations), proceed with the following steps
 
 Clone the Repository,
 
