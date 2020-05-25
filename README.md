@@ -1,12 +1,12 @@
 # Chef-React-App
 
-This is a react app to help people in need of cooked meals for their events find food vendors around them. It is a constant struggle to have a variety of choices when it comes to good food, with this app, we bridge that gap.
+This is a React app to help people in need of cooked meals for their events find food vendors around them. It is a constant struggle to have a variety of choices when it comes to good food, with this app, we bridge that gap.
 
 ## Table of Contents
 
 - [User Features](#user-features)
 - [Concepts and Apis Employed](#concepts-and-apis-employed)
-- [Built With](#built-with)
+- [Built with](#built-with)
 - [Live Preview](#live-preview)
 - [Required Installations](#required-installations)
 - [Instalation of This App](#instalation)
@@ -31,11 +31,11 @@ This is a react app to help people in need of cooked meals for their events find
 - Paystack API is employed for payments.
 - Axios is employed for all http requests.
 - Redux is used for state management.
-- Javascript asynchronous functions are employed using the async,await,try and catch keywords.
+- JavaScript asynchronous functions are employed using the async,await,try and catch keywords.
 
-<!-- BUILT WITH -->
+<!-- BUILT wITH -->
 
-## Built With
+## Built with
 
 - HTML5
 - CSS3
@@ -50,7 +50,7 @@ This is a react app to help people in need of cooked meals for their events find
 
 ## Live Preview
 
-Find the live version [here](https://foodies-stop.netlify.com/).
+Find the live version [here](https://foodies-stop.netlify.app/).
 A screenshot of how it looks shall be added in due course.
 ![Image](/src/proof.png)
 
