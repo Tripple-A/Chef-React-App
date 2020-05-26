@@ -9,7 +9,7 @@ This is a React app to help people in need of cooked meals for their events find
 - [Built with](#built-with)
 - [Live Preview](#live-preview)
 - [Required Installations](#required-installations)
-- [Instalation of This App](#instalation)
+- [Installation of This App](#instalation)
 - [License](#license)
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
