@@ -1,6 +1,6 @@
 # Chef-React-App
 
-This is a react app to help people in need of cooked meals for their events find food vendors around them . It is a constant struggle to have a variety of choices when it comes to good food,with this app,we bridge that gap.
+This is a React app to help people in need of cooked meals for their events find food vendors around them. It is a constant struggle to have a variety of choices when it comes to good food, with this app, we bridge that gap.
 
 ![screenshot](./screenshot.png)
 
@@ -8,7 +8,7 @@ This is a react app to help people in need of cooked meals for their events find
 
 - [User Features](#user-features)
 - [Concepts and Apis Employed](#concepts-and-apis-employed)
-- [Built With](#built-with)
+- [Built with](#built-with)
 - [Live Preview](#live-preview)
 - [Required Installations](#required-installations)
 - [Instalation of This App](#instalation)
@@ -21,7 +21,7 @@ This is a react app to help people in need of cooked meals for their events find
 ## User Features
 
 - A user has access to all vendors registered on the app.
-- A user upon sign-in can visit a particular vendor's page,view what is available and then,make a booking for his event upon vendor availability for that date.
+- A user upon sign-in can visit a particular vendor's page, view what is available and then, make a booking for his event upon vendor availability for that date.
 - Users can also become vendors upon sign-up after payment of a fee.
 - Users who are vendors can create their vendor profile and constantly upload meal-pictures to entice their customers.
 
@@ -33,32 +33,32 @@ This is a react app to help people in need of cooked meals for their events find
 - Paystack API is employed for payments.
 - Axios is employed for all http requests.
 - Redux is used for state management.
-- Javascript asynchronous functions are employed using the async,await,try and catch keywords.
+- JavaScript asynchronous functions are employed using the async,await,try and catch keywords.
 
-<!-- BUILT WITH -->
+<!-- BUILT wITH -->
 
-## Built With
+## Built with
 
 - HTML5
 - CSS3
 - Tailwind CSS
 - Bootstrap
-- JAVASCRIPT(ES6)
+- JavaScript
 - React
 - Redux
 - Rails (API)
 
 <!-- LIVE PREVIEW -->
 
-## LIVE PREVIEW
+## Live Preview
 
-Find the live version [here](https://foodies-stop.netlify.com/).
-A screenshot of how it looks shall be added in due course.
-![Image](/src/proof.png)
+Find the live version [here](https://foodies-stop.netlify.app/).
+Below is a screenshot of what it looks like.
+![Image](/src/screenshot.png)
 
 <!-- REQUIRED INSTALLATION -->
 
-## REQUIRED INSTALLATIONS
+## Required Installations
 
 - npm
 
@@ -66,7 +66,7 @@ A screenshot of how it looks shall be added in due course.
 
 ## Installation of This Repository
 
-Once you have installed the requiered packages shown on the [Required Installations](#required-installations), proceed with the following steps
+Once you have installed the required packages shown on the [Required Installations](#required-installations), proceed with the following steps
 
 Clone the Repository,
 
@@ -100,10 +100,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-- 🇳🇬 Abiodun Ajibade - biodun9@gmail.com | [Github Account](https://github.com/Tripple-A) | [Twitter](https://twitter.com/AbiodunAjibade3) | [Linkedin](https://linkedin.com/in/abiodun-ajibade)
-
-* 🇳🇬 Adebola Adeniran - adebola.niran@gmail.com | [Github Account](https://github.com/onedebos) | [Twitter](https://twitter.com/debosthefirst) | [Linkedin](https://linkedin.com/in/adebola-niran)
-  <!-- ACKNOWLEDGEMENTS -->
+- 🇳🇬 Abiodun Ajibade - biodun9@gmail.com | [Github Account](https://github.com/Tripple-A) | [Twitter](https://twitter.com/AbiodunAjibade3) | [Linkedin](https://linkedin.com/in/abiodun-ajibade) | [Portfolio](https://abiodun-ajibade.netlify.app/)
 
 ## Acknowledgements
 
