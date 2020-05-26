@@ -58,7 +58,7 @@ Below is a screenshot of what it looks like.
 
 ## Required Installations
 
-- npm
+- Npm
 
 <!-- INSTALLATION -->
 
