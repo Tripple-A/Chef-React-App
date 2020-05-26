@@ -66,7 +66,7 @@ Below is a screenshot of what it looks like.
 
 Once you have installed the required packages shown on the [Required Installations](#required-installations), proceed with the following steps
 
-Clone the Repository,
+Clone the Repository
 
 ```Shell
 your@pc:~$ git clone git@github.com:Tripple-A/Chef-React-App.git
