@@ -24,7 +24,7 @@ export const Listvendors = ({ vendorsToDisplay, isSearchEmpty }) => {
         <p className="bg-gray-200 rounded-full px-3 py-1">
           <strong>location:</strong> <span>{vendor.location}</span>
         </p>
-        <p className="bg-gray-200 rounded-full px-3 py-1">
+        <p className="bg-gray-200 rounded-full px-3 py-1 mt-2">
           <strong>specialty:</strong> <span>{vendor.specialty}</span>
         </p>
         <p className="ml-3 font-medium">{vendor.pitch}</p>
