@@ -49,7 +49,7 @@ const ViewVendor = ({ match, user }) => {
   return (
     <div className="bg-light-skin min-h-full pt-10 m-auto profileFormContainer ">
       <div className="pt-8 pformWrapper ">
-        <div className="bg-dark-skin px-6 py-3 sm:max-w-lg lg:max-w-2xl m-auto rounded-lg text-center">
+        <div className="bg-dark-skin px-6 p-3 sm:max-w-lg lg:max-w-2xl m-auto rounded-lg text-center">
           <h1 className="text-white font-semibold">{profile.company_name} </h1>
         </div>
         <div className="2xl sm:max-w-lg lg:max-w-2xl m-auto bg-light-skin w-6/12 rounded-lg text-dark-skin px-2 py-4 font-bold hidden saving ">
