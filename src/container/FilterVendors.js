@@ -38,7 +38,7 @@ export const FilterVendors = () => {
       <form className="max-w-screen-lg m-auto ">
         <div className="mobile-flex flex lg:justify-between ml-4 mr-4">
           <select
-            className="w-12/12 lg:w-5/5 mt-4 bg-gray-300 p-2 focus:shadow-outline"
+            className="w-12/12 lg:w-5/5 mt-4 bg-gray-200 p-2 focus:shadow-outline rounded-lg"
             value={specialty}
             onChange={handleSpecialtyChange}
           >
