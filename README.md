@@ -7,6 +7,7 @@ This is a React app to help people in need of cooked meals for their events find
 - [User Features](#user-features)
 - [Concepts and Apis Employed](#concepts-and-apis-employed)
 - [Built with](#built-with)
+- [Demo](#demo)
 - [Live Preview](#live-preview)
 - [Required Installations](#required-installations)
 - [Installation of This App](#instalation)
@@ -45,6 +46,13 @@ This is a React app to help people in need of cooked meals for their events find
 - React
 - Redux
 - Rails (API)
+
+<!-- DEMO -->
+
+## Demo
+For demo purposes, you can sign in with the credentials below;
+* Email - tola@tola.com
+* Password - password
 
 <!-- LIVE PREVIEW -->
 
