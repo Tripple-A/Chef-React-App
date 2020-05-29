@@ -1,6 +1,11 @@
 # Chef-React-App
 
+<<<<<<< HEAD
 This is a React app to help people in need of cooked meals for their events find food vendors around them. It is a constant struggle to have a variety of choices when it comes to good food, with this app, we bridge that gap.
+=======
+This is a react app to help people in need of cooked meals for their events find food vendors around them . It is a constant struggle to have a variety of choices when it comes to good food,with this app,we bridge that gap.
+![screenshot](./screenshot.png)
+>>>>>>> fix-cors
 
 ## Table of Contents
 
@@ -106,8 +111,14 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
+<<<<<<< HEAD
 - 🇳🇬 Abiodun Ajibade - biodun9@gmail.com | [Github Account](https://github.com/Tripple-A) | [Twitter](https://twitter.com/AbiodunAjibade3) | [Linkedin](https://linkedin.com/in/abiodun-ajibade) | [Portfolio](https://abiodun-ajibade.netlify.app/)
 - 🇳🇬 Adebola Adeniran - adebola.niran@gmail.com | [Github Account](https://github.com/onedebos) | [Twitter](https://twitter.com/debosthefirst) | [Linkedin](https://linkedin.com/in/adebola-niran)
+=======
+- 🇳🇬 Abiodun Ajibade - biodun9@gmail.com | [Github Account](https://github.com/Tripple-A) | [Twitter](https://twitter.com/AbiodunAjibade3) | [Linkedin](https://linkedin.com/in/abiodun-ajibade)
+
+* 🇳🇬 Adebola Adeniran - adebola.niran@gmail.com | [Github Account](https://github.com/onedebos) | [Twitter](https://twitter.com/debosthefirst) | [Linkedin](https://linkedin.com/in/adebola-niran)  <!-- ACKNOWLEDGEMENTS -->
+>>>>>>> fix-cors
 
 ## Acknowledgements
 
