@@ -11,7 +11,7 @@ export const ProfileInfo = ({
   isLoaded
 }) => {
   let displayImages = [];
-  let noImages = "";
+
   const isImageLoaded = () => {
     if (isLoaded && images.length > 0) {
       displayImages = images.map(p => (
@@ -31,15 +31,6 @@ export const ProfileInfo = ({
           </a>
         </div>
       ));
-    } else if (isLoaded && !images) {
-      noImages = (
-        <div
-          className="text-center px-10 font-semibold bg-gray-200 py-4 shadow-md
-        "
-        >
-          You currently do not have any uploaded images.
-        </div>
-      );
     }
   };
 
@@ -57,7 +48,7 @@ export const ProfileInfo = ({
           </div>
           <div>
             <p>
-              <span className="">
+              <span>
                 <span className="font-semibold">specialty: </span>
                 {specialty}
               </span>
