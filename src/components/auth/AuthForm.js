@@ -19,7 +19,7 @@ export const AuthForm = ({
       <div className="authImg">
         <AuthImg />
         <div className="hot">
-          <h3>Hot, Fresh food.</h3>
+          <h3 className="text-2xl md:text-4xl">Hot, Fresh food.</h3>
           <p>Delivered fast to your Home.</p>
           <p>Sign up as a vendor or order from our verified vendors</p>
         </div>
