@@ -47,7 +47,7 @@ export const ProfileInfo = ({
 
   return (
     <div>
-      <div className="bg-gray-200 px-4 py-4 rounded-md mt-4 shadow-lg ">
+      <div className="bg-gray-200 px-4 py-4 rounded-md mt-4 shadow-lg">
         <div className="md:grid md:grid-cols-2 ">
           <div>
             <p>
@@ -99,7 +99,18 @@ export const ProfileInfo = ({
               {displayImages}
             </div>
           )}
-          <div>{noImages}</div>
+          <div>
+            {images.length < 1 && isLoaded ? (
+              <div
+                className="text-center px-10 font-semibold bg-gray-200 py-4 shadow-md
+        "
+              >
+                This vendor does not have any uploaded images.
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       </div>
     </div>

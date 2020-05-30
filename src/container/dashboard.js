@@ -10,10 +10,9 @@ const mapStateToProps = state => ({
 });
 
 class Dashboard extends Component {
-
   render() {
     const { user, logged_in } = this.props;
-    const showDashboard = logged_in? '' : <Redirect to="/" />
+    const showDashboard = logged_in ? "" : <Redirect to="/" />;
     return (
       <div className="bg-light-skin min-h-screen">
         <div>{showDashboard}</div>

@@ -47,8 +47,8 @@ const ViewVendor = ({ match, user }) => {
     fetchData();
   }, [id]);
   return (
-    <div className="bg-light-skin min-h-full pt-10 m-auto profileFormContainer ">
-      <div className="pt-8 pformWrapper ">
+    <div className="bg-light-skin min-h-full min-h-screen pt-10 m-auto">
+      <div className="pt-8 pformWrapper">
         <div className="bg-dark-skin p-3 sm:max-w-lg lg:max-w-2xl m-auto rounded-lg text-center">
           <h1 className="text-white font-semibold">{profile.company_name} </h1>
         </div>
@@ -91,6 +91,7 @@ const ViewVendor = ({ match, user }) => {
           </div>
         </div>
         <div className="sm:max-w-lg lg:max-w-2xl m-auto">
+          {console.log(images)}
           <ProfileInfo
             vendorName={profile.company_name}
             specialty={profile.specialty}

@@ -55,10 +55,11 @@ const ImageForm = ({ user_id }) => {
   );
   return (
     <div>
-      <button onClick={e => hideForm(e)}>
-        <span className="bg-gray-200 rounded px-3 py-1 md:text-base font-medium text-gray-700 mr-2 mt-2">
-          click to upload event images
-        </span>
+      <button
+        onClick={e => hideForm(e)}
+        className="bg-gray-200 rounded px-2 py-1 md:text-base font-medium text-gray-700 mr-2 mt-2"
+      >
+        <span>click to upload event images</span>
       </button>
       <form className="imgForm" style={{ display: "none" }}>
         <h3>{error}</h3>
